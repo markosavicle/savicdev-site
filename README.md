@@ -16,7 +16,11 @@ Preview locally: open `index.html` in a browser, or run `npx serve .`.
 
 ## Editing copy
 
-All text lives in the `I18N` object near the bottom of `index.html` (`sr` and `en` blocks, same keys). Integration logos/tags are in `INTEGRATIONS` right below it.
+All text lives in the `I18N` object near the bottom of `index.html` (`sr` and `en` blocks, same keys). If a key is missing from one language, the browser console shows `I18N: sr/en key mismatch`.
+
+**Adding a case study:** copy a `<!-- PROJECT CARD START: cs.N -->` … `<!-- PROJECT CARD END -->` block, rename its `cs.N.*` keys (e.g. `cs.4.t`, `cs.4.p`, …), and add those keys to both `sr` and `en`.
+
+The logo is an inline SVG in the navbar and footer; `favicon.svg` is the same mark on a dark tile.
 
 ## Deploy to savicdev.com (GitHub Pages)
 

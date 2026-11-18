@@ -13,7 +13,7 @@
   <link rel="canonical" href="https://savicdev.com/">
   <link rel="alternate" hreflang="sr" href="https://savicdev.com/">
   <link rel="alternate" hreflang="en" href="https://savicdev.com/?lang=en">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23020617'/><text x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='%2334d399' text-anchor='middle'>s/</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -28,7 +28,14 @@
     body { background:#020617; }
     .grid-bg { background-image: linear-gradient(rgba(148,163,184,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.06) 1px, transparent 1px); background-size: 48px 48px; }
     .glow { background: radial-gradient(60% 50% at 50% 0%, rgba(16,185,129,.18), transparent 70%); }
-    [data-i18n] { transition: opacity .12s; }
+    .checks li { position: relative; padding-left: 1.6rem; }
+    .checks li::before { content: ''; position: absolute; left: 0; top: .2em; width: 1rem; height: 1rem; background: #10b981;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/contain no-repeat;
+              mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/contain no-repeat; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .chev { transform: rotate(180deg); }
+    .nav-link.active { color: #34d399; }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-300 font-sans antialiased selection:bg-emerald-400/30 selection:text-white">
@@ -36,29 +43,34 @@
   <!-- Navbar -->
   <header class="sticky top-0 z-50 border-b border-white/5 bg-slate-950/80 backdrop-blur-md">
     <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6" aria-label="Main">
-      <a href="#top" class="font-mono text-lg font-bold tracking-tight text-white">savic<span class="text-emerald-400">dev</span></a>
-      <div class="hidden items-center gap-8 text-sm md:flex">
-        <a href="#services" class="hover:text-white" data-i18n="nav.services"></a>
-        <a href="#process" class="hover:text-white" data-i18n="nav.process"></a>
-        <a href="#integrations" class="hover:text-white" data-i18n="nav.integrations"></a>
-        <a href="#contact" class="hover:text-white" data-i18n="nav.contact"></a>
+      <a href="#top" class="flex items-center gap-2 text-lg font-bold tracking-tight text-white" aria-label="savicdev">
+        <svg class="h-7 w-7 shrink-0" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M24 8H12a4 4 0 0 0 0 8h8a4 4 0 0 1 0 8H8" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="8" r="3" fill="#10b981"/><circle cx="8" cy="24" r="3" fill="#10b981"/><circle cx="16" cy="16" r="2" fill="#ffffff"/></svg>
+        <span>savic<span class="text-emerald-500">dev</span></span>
+      </a>
+      <div class="hidden items-center gap-7 text-sm lg:flex">
+        <a href="#services" class="nav-link hover:text-white" data-i18n="nav.services"></a>
+        <a href="#cases" class="nav-link hover:text-white" data-i18n="nav.cases"></a>
+        <a href="#why" class="nav-link hover:text-white" data-i18n="nav.why"></a>
+        <a href="#pricing" class="nav-link hover:text-white" data-i18n="nav.pricing"></a>
+        <a href="#contact" class="nav-link hover:text-white" data-i18n="nav.contact"></a>
       </div>
       <div class="flex items-center gap-3">
         <div class="flex rounded-md border border-white/10 p-0.5 font-mono text-xs" role="group" aria-label="Language">
           <button type="button" data-lang="sr" class="rounded px-2 py-1">SR</button>
           <button type="button" data-lang="en" class="rounded px-2 py-1">EN</button>
         </div>
-        <a href="#contact" class="hidden rounded-md bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-emerald-400 sm:inline-block" data-i18n="nav.cta"></a>
-        <button type="button" id="menuBtn" class="rounded-md border border-white/10 p-2 md:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menu">
+        <a href="#contact" class="hidden whitespace-nowrap rounded-md bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-emerald-400 sm:inline-block" data-i18n="nav.cta"></a>
+        <button type="button" id="menuBtn" class="rounded-md border border-white/10 p-2 lg:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menu">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
     </nav>
-    <div id="mobileMenu" class="hidden border-t border-white/5 px-4 pb-4 md:hidden">
-      <a href="#services" class="block py-3" data-i18n="nav.services"></a>
-      <a href="#process" class="block py-3" data-i18n="nav.process"></a>
-      <a href="#integrations" class="block py-3" data-i18n="nav.integrations"></a>
-      <a href="#contact" class="block py-3" data-i18n="nav.contact"></a>
+    <div id="mobileMenu" class="hidden border-t border-white/5 px-4 pb-4 lg:hidden">
+      <a href="#services" class="nav-link block py-3" data-i18n="nav.services"></a>
+      <a href="#cases" class="nav-link block py-3" data-i18n="nav.cases"></a>
+      <a href="#why" class="nav-link block py-3" data-i18n="nav.why"></a>
+      <a href="#pricing" class="nav-link block py-3" data-i18n="nav.pricing"></a>
+      <a href="#contact" class="nav-link block py-3" data-i18n="nav.contact"></a>
       <a href="#contact" class="mt-2 block rounded-md bg-emerald-500 px-4 py-3 text-center font-semibold text-slate-950" data-i18n="nav.cta"></a>
     </div>
   </header>
@@ -83,6 +95,22 @@
           <div class="bg-slate-950 p-6"><dt class="font-mono text-2xl font-bold text-emerald-400">0%</dt><dd class="mt-1 text-sm" data-i18n="trust.2"></dd></div>
           <div class="bg-slate-950 p-6"><dt class="font-mono text-2xl font-bold text-emerald-400">99%+</dt><dd class="mt-1 text-sm" data-i18n="trust.3"></dd></div>
         </dl>
+        <div class="mt-10 flex flex-wrap items-center gap-2 text-xs">
+          <span class="mr-2 text-slate-500" data-i18n="hero.works"></span>
+          <span class="rounded-md border border-white/10 px-2.5 py-1 font-mono text-slate-400">Pantheon</span>
+          <span class="rounded-md border border-white/10 px-2.5 py-1 font-mono text-slate-400">Calculus</span>
+          <span class="rounded-md border border-white/10 px-2.5 py-1 font-mono text-slate-400">Lidder</span>
+          <span class="rounded-md border border-white/10 px-2.5 py-1 font-mono text-slate-400">SAP</span>
+          <span class="rounded-md border border-white/10 px-2.5 py-1 font-mono text-slate-400">Odoo</span>
+          <span class="rounded-md border border-white/10 px-2.5 py-1 font-mono text-slate-400">Magento</span>
+          <span class="rounded-md border border-white/10 px-2.5 py-1 font-mono text-slate-400">WooCommerce</span>
+          <span class="rounded-md border border-white/10 px-2.5 py-1 font-mono text-slate-400">Shopify</span>
+          <span class="rounded-md border border-white/10 px-2.5 py-1 font-mono text-slate-400">DExpress</span>
+          <span class="rounded-md border border-white/10 px-2.5 py-1 font-mono text-slate-400">AKS</span>
+          <span class="rounded-md border border-white/10 px-2.5 py-1 font-mono text-slate-400">PostExpress</span>
+          <span class="rounded-md border border-white/10 px-2.5 py-1 font-mono text-slate-400">DHL</span>
+          <span class="rounded-md border border-white/10 px-2.5 py-1 font-mono text-slate-400">n8n</span>
+        </div>
       </div>
     </section>
 
@@ -91,69 +119,189 @@
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <p class="font-mono text-sm text-emerald-400" data-i18n="svc.kicker"></p>
         <h2 class="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl" data-i18n="svc.title"></h2>
-        <div class="mt-12 grid gap-6 md:grid-cols-3">
-          <article class="rounded-xl border border-white/10 bg-slate-900/40 p-7 transition hover:border-emerald-400/40">
+        <div class="mt-12 grid gap-6 lg:grid-cols-3">
+          <article class="flex flex-col rounded-xl border border-white/10 bg-slate-900/40 p-7 transition hover:border-emerald-400/40">
             <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-400/10 text-emerald-400" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h11l-3-3M20 17H9l3 3"/></svg>
             </div>
             <h3 class="mt-5 text-lg font-semibold text-white" data-i18n="svc.1.t"></h3>
-            <p class="mt-3 text-sm leading-relaxed text-slate-400" data-i18n="svc.1.d"></p>
+            <p class="mt-4 font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.problem"></p>
+            <p class="mt-1 text-sm leading-relaxed text-slate-400" data-i18n="svc.1.p"></p>
+            <p class="mt-5 font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.get"></p>
+            <ul class="checks mb-6 mt-2 space-y-2 text-sm text-slate-300">
+              <li data-i18n="svc.1.b1"></li><li data-i18n="svc.1.b2"></li><li data-i18n="svc.1.b3"></li><li data-i18n="svc.1.b4"></li>
+            </ul>
+            <p class="mt-auto flex items-center justify-between border-t border-white/5 pt-4 text-sm"><span class="text-slate-500" data-i18n="lbl.turnaround"></span><span class="font-mono font-bold text-emerald-400" data-i18n="svc.1.time"></span></p>
           </article>
-          <article class="rounded-xl border border-white/10 bg-slate-900/40 p-7 transition hover:border-emerald-400/40">
+          <article class="flex flex-col rounded-xl border border-white/10 bg-slate-900/40 p-7 transition hover:border-emerald-400/40">
             <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-400/10 text-emerald-400" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>
             </div>
             <h3 class="mt-5 text-lg font-semibold text-white" data-i18n="svc.2.t"></h3>
-            <p class="mt-3 text-sm leading-relaxed text-slate-400" data-i18n="svc.2.d"></p>
+            <p class="mt-4 font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.problem"></p>
+            <p class="mt-1 text-sm leading-relaxed text-slate-400" data-i18n="svc.2.p"></p>
+            <p class="mt-5 font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.get"></p>
+            <ul class="checks mb-6 mt-2 space-y-2 text-sm text-slate-300">
+              <li data-i18n="svc.2.b1"></li><li data-i18n="svc.2.b2"></li><li data-i18n="svc.2.b3"></li><li data-i18n="svc.2.b4"></li>
+            </ul>
+            <p class="mt-auto flex items-center justify-between border-t border-white/5 pt-4 text-sm"><span class="text-slate-500" data-i18n="lbl.turnaround"></span><span class="font-mono font-bold text-emerald-400" data-i18n="svc.2.time"></span></p>
           </article>
-          <article class="rounded-xl border border-white/10 bg-slate-900/40 p-7 transition hover:border-emerald-400/40">
+          <article class="flex flex-col rounded-xl border border-white/10 bg-slate-900/40 p-7 transition hover:border-emerald-400/40">
             <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-400/10 text-emerald-400" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 12h5l5-6M12 12l5 6"/></svg>
             </div>
             <h3 class="mt-5 text-lg font-semibold text-white" data-i18n="svc.3.t"></h3>
-            <p class="mt-3 text-sm leading-relaxed text-slate-400" data-i18n="svc.3.d"></p>
+            <p class="mt-4 font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.problem"></p>
+            <p class="mt-1 text-sm leading-relaxed text-slate-400" data-i18n="svc.3.p"></p>
+            <p class="mt-5 font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.get"></p>
+            <ul class="checks mb-6 mt-2 space-y-2 text-sm text-slate-300">
+              <li data-i18n="svc.3.b1"></li><li data-i18n="svc.3.b2"></li><li data-i18n="svc.3.b3"></li><li data-i18n="svc.3.b4"></li>
+            </ul>
+            <p class="mt-auto flex items-center justify-between border-t border-white/5 pt-4 text-sm"><span class="text-slate-500" data-i18n="lbl.turnaround"></span><span class="font-mono font-bold text-emerald-400" data-i18n="svc.3.time"></span></p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Process -->
-    <section id="process" class="scroll-mt-16 border-t border-white/5 bg-slate-900/30 py-24">
+    <!-- Case studies
+         To add a project: copy one PROJECT CARD block, change the cs.N keys,
+         and add the same keys to BOTH the sr and en blocks in I18N (bottom of file). -->
+    <section id="cases" class="scroll-mt-16 border-t border-white/5 bg-slate-900/30 py-24">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <p class="font-mono text-sm text-emerald-400" data-i18n="proc.kicker"></p>
-        <h2 class="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl" data-i18n="proc.title"></h2>
-        <ol class="mt-12 grid gap-6 md:grid-cols-3">
-          <li class="relative rounded-xl border border-white/10 bg-slate-950 p-7">
-            <span class="font-mono text-sm font-bold text-emerald-400">01</span>
-            <h3 class="mt-3 text-lg font-semibold text-white" data-i18n="proc.1.t"></h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-400" data-i18n="proc.1.d"></p>
-          </li>
-          <li class="relative rounded-xl border border-emerald-400/30 bg-slate-950 p-7">
-            <span class="font-mono text-sm font-bold text-emerald-400">02</span>
-            <h3 class="mt-3 text-lg font-semibold text-white" data-i18n="proc.2.t"></h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-400" data-i18n="proc.2.d"></p>
-          </li>
-          <li class="relative rounded-xl border border-white/10 bg-slate-950 p-7">
-            <span class="font-mono text-sm font-bold text-emerald-400">03</span>
-            <h3 class="mt-3 text-lg font-semibold text-white" data-i18n="proc.3.t"></h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-400" data-i18n="proc.3.d"></p>
-          </li>
+        <p class="font-mono text-sm text-emerald-400" data-i18n="cs.kicker"></p>
+        <h2 class="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl" data-i18n="cs.title"></h2>
+        <div class="mt-12 grid items-start gap-6 lg:grid-cols-3">
+
+          <!-- PROJECT CARD START: cs.1 -->
+          <article class="rounded-xl border border-white/10 bg-slate-950 p-7">
+            <span class="rounded-md bg-emerald-400/10 px-2 py-1 font-mono text-xs text-emerald-300">ERP ↔ E-Commerce Sync</span>
+            <h3 class="mt-4 text-lg font-semibold text-white" data-i18n="cs.1.t"></h3>
+            <dl class="mt-4 space-y-4 text-sm">
+              <div><dt class="font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.problem"></dt><dd class="mt-1 leading-relaxed text-slate-400" data-i18n="cs.1.p"></dd></div>
+              <div><dt class="font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.solution"></dt><dd class="mt-1 leading-relaxed text-slate-400" data-i18n="cs.1.s"></dd></div>
+              <div class="rounded-lg border border-emerald-400/20 bg-emerald-400/5 p-4"><dt class="font-mono text-xs uppercase tracking-wider text-emerald-300" data-i18n="lbl.impact"></dt><dd class="mt-1"><span class="block text-xl font-bold text-white" data-i18n="cs.1.m"></span><span class="text-slate-300" data-i18n="cs.1.r"></span></dd></div>
+            </dl>
+            <details class="mt-5 border-t border-white/5 pt-4">
+              <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-emerald-400 hover:text-emerald-300"><span data-i18n="lbl.arch"></span><svg class="chev transition" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+              <ol class="mt-4 space-y-2 text-sm">
+                <li class="rounded-lg border border-white/10 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.in"></span><span data-i18n="cs.1.a1"></span></li>
+                <li class="text-center text-emerald-400" aria-hidden="true">↓</li>
+                <li class="rounded-lg border border-emerald-400/30 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.proc"></span><span data-i18n="cs.1.a2"></span></li>
+                <li class="text-center text-emerald-400" aria-hidden="true">↓</li>
+                <li class="rounded-lg border border-white/10 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.out"></span><span data-i18n="cs.1.a3"></span></li>
+              </ol>
+            </details>
+          </article>
+          <!-- PROJECT CARD END: cs.1 -->
+
+          <!-- PROJECT CARD START: cs.2 -->
+          <article class="rounded-xl border border-white/10 bg-slate-950 p-7">
+            <span class="rounded-md bg-emerald-400/10 px-2 py-1 font-mono text-xs text-emerald-300">Python + LLM</span>
+            <h3 class="mt-4 text-lg font-semibold text-white" data-i18n="cs.2.t"></h3>
+            <dl class="mt-4 space-y-4 text-sm">
+              <div><dt class="font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.problem"></dt><dd class="mt-1 leading-relaxed text-slate-400" data-i18n="cs.2.p"></dd></div>
+              <div><dt class="font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.solution"></dt><dd class="mt-1 leading-relaxed text-slate-400" data-i18n="cs.2.s"></dd></div>
+              <div class="rounded-lg border border-emerald-400/20 bg-emerald-400/5 p-4"><dt class="font-mono text-xs uppercase tracking-wider text-emerald-300" data-i18n="lbl.impact"></dt><dd class="mt-1"><span class="block text-xl font-bold text-white" data-i18n="cs.2.m"></span><span class="text-slate-300" data-i18n="cs.2.r"></span></dd></div>
+            </dl>
+            <details class="mt-5 border-t border-white/5 pt-4">
+              <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-emerald-400 hover:text-emerald-300"><span data-i18n="lbl.arch"></span><svg class="chev transition" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+              <ol class="mt-4 space-y-2 text-sm">
+                <li class="rounded-lg border border-white/10 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.in"></span><span data-i18n="cs.2.a1"></span></li>
+                <li class="text-center text-emerald-400" aria-hidden="true">↓</li>
+                <li class="rounded-lg border border-emerald-400/30 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.proc"></span><span data-i18n="cs.2.a2"></span></li>
+                <li class="text-center text-emerald-400" aria-hidden="true">↓</li>
+                <li class="rounded-lg border border-white/10 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.out"></span><span data-i18n="cs.2.a3"></span></li>
+              </ol>
+            </details>
+          </article>
+          <!-- PROJECT CARD END: cs.2 -->
+
+          <!-- PROJECT CARD START: cs.3 -->
+          <article class="rounded-xl border border-white/10 bg-slate-950 p-7">
+            <span class="rounded-md bg-emerald-400/10 px-2 py-1 font-mono text-xs text-emerald-300">Python Crawler</span>
+            <h3 class="mt-4 text-lg font-semibold text-white" data-i18n="cs.3.t"></h3>
+            <dl class="mt-4 space-y-4 text-sm">
+              <div><dt class="font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.problem"></dt><dd class="mt-1 leading-relaxed text-slate-400" data-i18n="cs.3.p"></dd></div>
+              <div><dt class="font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.solution"></dt><dd class="mt-1 leading-relaxed text-slate-400" data-i18n="cs.3.s"></dd></div>
+              <div class="rounded-lg border border-emerald-400/20 bg-emerald-400/5 p-4"><dt class="font-mono text-xs uppercase tracking-wider text-emerald-300" data-i18n="lbl.impact"></dt><dd class="mt-1"><span class="block text-xl font-bold text-white" data-i18n="cs.3.m"></span><span class="text-slate-300" data-i18n="cs.3.r"></span></dd></div>
+            </dl>
+            <details class="mt-5 border-t border-white/5 pt-4">
+              <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-emerald-400 hover:text-emerald-300"><span data-i18n="lbl.arch"></span><svg class="chev transition" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+              <ol class="mt-4 space-y-2 text-sm">
+                <li class="rounded-lg border border-white/10 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.in"></span><span data-i18n="cs.3.a1"></span></li>
+                <li class="text-center text-emerald-400" aria-hidden="true">↓</li>
+                <li class="rounded-lg border border-emerald-400/30 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.proc"></span><span data-i18n="cs.3.a2"></span></li>
+                <li class="text-center text-emerald-400" aria-hidden="true">↓</li>
+                <li class="rounded-lg border border-white/10 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.out"></span><span data-i18n="cs.3.a3"></span></li>
+              </ol>
+            </details>
+          </article>
+          <!-- PROJECT CARD END: cs.3 -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Why me -->
+    <section id="why" class="scroll-mt-16 border-t border-white/5 py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <p class="font-mono text-sm text-emerald-400" data-i18n="why.kicker"></p>
+        <h2 class="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl" data-i18n="why.title"></h2>
+        <div class="mt-12 grid gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10 sm:grid-cols-2">
+          <div class="bg-slate-950 p-7"><span class="font-mono text-sm font-bold text-emerald-400">01</span><h3 class="mt-3 text-lg font-semibold text-white" data-i18n="why.1.t"></h3><p class="mt-2 text-sm leading-relaxed text-slate-400" data-i18n="why.1.d"></p></div>
+          <div class="bg-slate-950 p-7"><span class="font-mono text-sm font-bold text-emerald-400">02</span><h3 class="mt-3 text-lg font-semibold text-white" data-i18n="why.2.t"></h3><p class="mt-2 text-sm leading-relaxed text-slate-400" data-i18n="why.2.d"></p></div>
+          <div class="bg-slate-950 p-7"><span class="font-mono text-sm font-bold text-emerald-400">03</span><h3 class="mt-3 text-lg font-semibold text-white" data-i18n="why.3.t"></h3><p class="mt-2 text-sm leading-relaxed text-slate-400" data-i18n="why.3.d"></p></div>
+          <div class="bg-slate-950 p-7"><span class="font-mono text-sm font-bold text-emerald-400">04</span><h3 class="mt-3 text-lg font-semibold text-white" data-i18n="why.4.t"></h3><p class="mt-2 text-sm leading-relaxed text-slate-400" data-i18n="why.4.d"></p></div>
+        </div>
+
+        <!-- Process -->
+        <h3 class="mt-20 text-xl font-bold text-white" data-i18n="proc.title"></h3>
+        <ol class="mt-6 grid gap-6 md:grid-cols-3">
+          <li class="rounded-xl border border-white/10 bg-slate-900/40 p-6"><span class="font-mono text-sm font-bold text-emerald-400">→ 1</span><h4 class="mt-2 font-semibold text-white" data-i18n="proc.1.t"></h4><p class="mt-2 text-sm leading-relaxed text-slate-400" data-i18n="proc.1.d"></p></li>
+          <li class="rounded-xl border border-emerald-400/30 bg-slate-900/40 p-6"><span class="font-mono text-sm font-bold text-emerald-400">→ 2</span><h4 class="mt-2 font-semibold text-white" data-i18n="proc.2.t"></h4><p class="mt-2 text-sm leading-relaxed text-slate-400" data-i18n="proc.2.d"></p></li>
+          <li class="rounded-xl border border-white/10 bg-slate-900/40 p-6"><span class="font-mono text-sm font-bold text-emerald-400">→ 3</span><h4 class="mt-2 font-semibold text-white" data-i18n="proc.3.t"></h4><p class="mt-2 text-sm leading-relaxed text-slate-400" data-i18n="proc.3.d"></p></li>
         </ol>
       </div>
     </section>
 
-    <!-- Integrations -->
-    <section id="integrations" class="scroll-mt-16 border-t border-white/5 py-24">
+    <!-- Pricing -->
+    <section id="pricing" class="scroll-mt-16 border-t border-white/5 bg-slate-900/30 py-24">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <p class="font-mono text-sm text-emerald-400" data-i18n="int.kicker"></p>
-        <h2 class="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl" data-i18n="int.title"></h2>
-        <p class="mt-4 max-w-2xl text-slate-400" data-i18n="int.sub"></p>
-        <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4" id="intGroups"></div>
+        <p class="font-mono text-sm text-emerald-400" data-i18n="pr.kicker"></p>
+        <h2 class="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl" data-i18n="pr.title"></h2>
+        <div class="mt-12 grid items-stretch gap-6 lg:grid-cols-3">
+          <div class="flex flex-col rounded-xl border border-white/10 bg-slate-950 p-7">
+            <h3 class="font-semibold text-white" data-i18n="pr.1.n"></h3>
+            <p class="mt-4 whitespace-nowrap font-mono text-2xl font-bold text-white" data-i18n="pr.1.price"></p>
+            <p class="mt-1 font-mono text-sm text-emerald-400" data-i18n="pr.1.time"></p>
+            <p class="mt-4 text-sm text-slate-400" data-i18n="pr.1.d"></p>
+            <ul class="checks mb-7 mt-5 space-y-2 text-sm"><li data-i18n="pr.1.b1"></li><li data-i18n="pr.1.b2"></li><li data-i18n="pr.1.b3"></li></ul>
+            <a href="#contact" class="mt-auto block rounded-md border border-white/15 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-white/5" data-i18n="pr.cta"></a>
+          </div>
+          <div class="relative flex flex-col rounded-xl border-2 border-emerald-400 bg-slate-950 p-7 shadow-xl shadow-emerald-500/10">
+            <span class="absolute -top-3 left-7 rounded-full bg-emerald-500 px-3 py-0.5 text-xs font-bold text-slate-950" data-i18n="pr.popular"></span>
+            <h3 class="font-semibold text-white" data-i18n="pr.2.n"></h3>
+            <p class="mt-4 whitespace-nowrap font-mono text-2xl font-bold text-white" data-i18n="pr.2.price"></p>
+            <p class="mt-1 font-mono text-sm text-emerald-400" data-i18n="pr.2.time"></p>
+            <p class="mt-4 text-sm text-slate-400" data-i18n="pr.2.d"></p>
+            <ul class="checks mb-7 mt-5 space-y-2 text-sm"><li data-i18n="pr.2.b1"></li><li data-i18n="pr.2.b2"></li><li data-i18n="pr.2.b3"></li></ul>
+            <a href="#contact" class="mt-auto block rounded-md bg-emerald-500 px-4 py-3 text-center text-sm font-semibold text-slate-950 hover:bg-emerald-400" data-i18n="pr.cta"></a>
+          </div>
+          <div class="flex flex-col rounded-xl border border-white/10 bg-slate-950 p-7">
+            <h3 class="font-semibold text-white" data-i18n="pr.3.n"></h3>
+            <p class="mt-4 whitespace-nowrap font-mono text-2xl font-bold text-white" data-i18n="pr.3.price"></p>
+            <p class="mt-1 font-mono text-sm text-emerald-400" data-i18n="pr.3.time"></p>
+            <p class="mt-4 text-sm text-slate-400" data-i18n="pr.3.d"></p>
+            <ul class="checks mb-7 mt-5 space-y-2 text-sm"><li data-i18n="pr.3.b1"></li><li data-i18n="pr.3.b2"></li><li data-i18n="pr.3.b3"></li></ul>
+            <a href="#contact" class="mt-auto block rounded-md border border-white/15 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-white/5" data-i18n="pr.cta"></a>
+          </div>
+        </div>
+        <p class="mx-auto mt-10 max-w-2xl text-center text-sm text-slate-400" data-i18n="pr.note"></p>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="scroll-mt-16 border-t border-white/5 bg-slate-900/30 py-24">
+    <section id="contact" class="scroll-mt-16 border-t border-white/5 py-24">
       <div class="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-5">
         <div class="lg:col-span-2">
           <p class="font-mono text-sm text-emerald-400" data-i18n="ct.kicker"></p>
@@ -212,7 +360,13 @@
 
   <footer class="border-t border-white/5">
     <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-slate-500 sm:flex-row sm:px-6">
-      <p>© 2026 savicdev.com — Marko Savić. <span data-i18n="ft.rights"></span></p>
+      <div class="flex flex-col items-center gap-3 sm:flex-row">
+        <a href="#top" class="flex items-center gap-2 font-bold text-white" aria-label="savicdev">
+          <svg class="h-6 w-6 shrink-0" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M24 8H12a4 4 0 0 0 0 8h8a4 4 0 0 1 0 8H8" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="8" r="3" fill="#10b981"/><circle cx="8" cy="24" r="3" fill="#10b981"/><circle cx="16" cy="16" r="2" fill="#ffffff"/></svg>
+          <span>savic<span class="text-emerald-500">dev</span></span>
+        </a>
+        <p class="text-center">© 2026 savicdev.com — Marko Savić. <span data-i18n="ft.rights"></span></p>
+      </div>
       <div class="flex items-center gap-5">
         <a href="https://github.com/markosavicle" target="_blank" rel="noopener" class="hover:text-white">GitHub</a>
         <button type="button" id="footLang" class="font-mono hover:text-white"></button>
@@ -225,26 +379,85 @@ const I18N = {
   sr: {
     'meta.title': 'savicdev — Automatizacija poslovnih procesa i ERP integracije',
     'meta.desc': 'Automatizacija poslovnih procesa, ERP integracije i AI rešenja za moderne firme. Bez menjanja vašeg postojećeg softvera.',
-    'nav.services': 'Usluge', 'nav.process': 'Proces', 'nav.integrations': 'Integracije', 'nav.contact': 'Kontakt', 'nav.cta': 'Zakažite poziv',
+    'nav.services': 'Šta nudim', 'nav.cases': 'Primeri projekata', 'nav.why': 'Zašto ja', 'nav.pricing': 'Cenovnik', 'nav.contact': 'Kontakt', 'nav.cta': 'Besplatna konsultacija',
     'hero.badge': 'Marko Savić — AI & Software Automation Engineer',
     'hero.title': 'Automatizacija poslovnih procesa, <span class="text-emerald-400">ERP integracije</span> i AI rešenja za moderne firme.',
     'hero.sub': 'Eliminišite ručno prekucavanje faktura, sinhronizujte lager sa webshop-om i ubrzajte obradu B2B porudžbina — bez menjanja vašeg postojećeg softvera.',
-    'hero.cta1': 'Besplatna analiza procesa', 'hero.cta2': 'Pogledajte rešenja',
+    'hero.cta1': 'Besplatna analiza procesa', 'hero.cta2': 'Pogledajte rešenja', 'hero.works': 'Radi sa sistemima koje već koristite:',
     'trust.1': 'dana za prvi pilot', 'trust.2': 'promene postojećeg ERP-a', 'trust.3': 'tačnost obrade dokumenata',
-    'svc.kicker': '// usluge', 'svc.title': 'Tri oblasti u kojima vaš tim gubi najviše vremena — i kako to rešavamo.',
-    'svc.1.t': 'ERP i e-commerce sinhronizacija',
-    'svc.1.d': 'Automatsko ažuriranje cena, stanja lagera i porudžbina između vašeg poslovnog programa (Pantheon, Calculus, Lidder, SAP, Odoo) i webshop-a (Magento, WooCommerce, Shopify).',
-    'svc.2.t': 'AI obrada dokumenata i faktura',
-    'svc.2.d': 'Automatsko izvlačenje stavki, šifara i količina iz PDF faktura dobavljača, cenovnika i email/Viber upita direktno u vaš sistem za fakturisanje.',
-    'svc.3.t': 'B2B tokovi rada i kurirske integracije',
-    'svc.3.d': 'Povezivanje kurirskih službi (DExpress, AKS, PostExpress, DHL), internih baza podataka, CRM-a i alata koji trenutno ne komuniciraju međusobno.',
-    'proc.kicker': '// proces', 'proc.title': 'Od prvog razgovora do rešenja u produkciji — bez dugih ugovora unapred.',
+
+    'lbl.problem': 'Problem', 'lbl.get': 'Šta dobijate', 'lbl.turnaround': 'Okvirni rok', 'lbl.solution': 'Rešenje', 'lbl.impact': 'Rezultat',
+    'lbl.arch': 'Pogledaj arhitekturu', 'lbl.in': 'ULAZ', 'lbl.proc': 'OBRADA', 'lbl.out': 'IZLAZ',
+
+    'svc.kicker': '// šta nudim', 'svc.title': 'Tri usluge koje direktno smanjuju ručni rad u vašoj firmi.',
+    'svc.1.t': 'ERP i webshop sinhronizacija',
+    'svc.1.p': 'Cene i stanja lagera se ručno prebacuju iz poslovnog programa u webshop, pa kupci poručuju robu koje nema.',
+    'svc.1.b1': 'Automatska sinhronizacija lagera i cena (Pantheon, Calculus, Lidder, SAP, Odoo)',
+    'svc.1.b2': 'Prenos porudžbina iz webshop-a (Magento, WooCommerce, Shopify) u ERP',
+    'svc.1.b3': 'Uvoz cenovnika dobavljača bez ručnih CSV fajlova',
+    'svc.1.b4': 'Upozorenja na greške i dnevni izveštaj sinhronizacije',
+    'svc.1.time': '1–3 nedelje',
+    'svc.2.t': 'AI obrada dokumenata, faktura i upita',
+    'svc.2.p': 'Vaš tim svakog dana prekucava stavke iz PDF faktura, cenovnika i upita sa emaila i Vibera.',
+    'svc.2.b1': 'Izvlačenje stavki, šifara, količina i cena iz PDF dokumenata',
+    'svc.2.b2': 'Automatsko uparivanje sa šiframa artikala u vašem sistemu',
+    'svc.2.b3': 'Upiti sa emaila i Vibera pretvoreni u gotove nacrte ponuda',
+    'svc.2.b4': 'Ručna provera samo za nesigurne stavke',
+    'svc.2.time': '3–10 dana',
+    'svc.3.t': 'Custom B2B integracije i kurirske službe',
+    'svc.3.p': 'Kurirske službe, CRM, baze i interni alati ne komuniciraju, pa se podaci ručno prenose između sistema.',
+    'svc.3.b1': 'Automatsko kreiranje i praćenje pošiljki (DExpress, AKS, PostExpress, DHL)',
+    'svc.3.b2': 'API mostovi između SQL/REST sistema i CRM-a',
+    'svc.3.b3': 'n8n tokovi rada za zadatke koji se ponavljaju',
+    'svc.3.b4': 'Interna baza znanja (RAG) nad vašom dokumentacijom',
+    'svc.3.time': '1–3 nedelje',
+
+    'cs.kicker': '// primeri projekata', 'cs.title': 'Primeri automatizacija iz prakse.',
+    'cs.1.t': 'Automatizacija lagera i cena',
+    'cs.1.p': 'Tehnički distributer sa više magacina i 15.000+ artikala ručno je uvozio CSV fajlove sa stanjima i cenama dobavljača, što je dovodilo do otkazanih porudžbina za robu koje nema.',
+    'cs.1.s': 'Dvosmerna automatska sinhronizacija stanja po magacinima i cenovnika dobavljača između ERP-a i webshop-a, sa validacijom i upozorenjima na greške.',
+    'cs.1.m': '0 ručnih CSV uvoza', 'cs.1.r': 'Manje otkazanih porudžbina zbog nestanka robe na 15.000+ artikala.',
+    'cs.1.a1': 'Stanja po magacinima iz ERP-a + cenovnici dobavljača (CSV / XLSX / API)',
+    'cs.1.a2': 'Python servis: normalizacija šifara, pravila formiranja cena, validacija',
+    'cs.1.a3': 'Webshop ažuriran u kratkim intervalima + izveštaj o greškama',
+    'cs.2.t': 'AI ekstrakcija PDF faktura i B2B upita',
+    'cs.2.p': 'Nabavka i prodaja su ručno prekucavale stavke iz PDF faktura dobavljača i upite za ponude sa emaila i Vibera.',
+    'cs.2.s': 'Python + LLM pipeline koji nestrukturisane PDF fakture i upite pretvara u strukturisane tabele spremne za ERP, uz automatsko uparivanje šifara artikala.',
+    'cs.2.m': '10+ sati nedeljno', 'cs.2.r': 'ušteđeno na ručnom prekucavanju, uz manje grešaka.',
+    'cs.2.a1': 'PDF fakture dobavljača, upiti sa emaila i Vibera',
+    'cs.2.a2': 'Ekstrakcija teksta + LLM parsiranje + uparivanje šifara artikala',
+    'cs.2.a3': 'Tabela spremna za uvoz u ERP / nacrt ponude',
+    'cs.3.t': 'B2B analiza tržišta i pipeline potencijalnih klijenata',
+    'cs.3.p': 'Ručno istraživanje potencijalnih B2B klijenata trajalo je satima po firmi, bez jasnog kriterijuma ko je zaista dobar kandidat.',
+    'cs.3.s': 'Automatski crawler domena i Python klasifikator koji prepoznaje tehnologije, tip poslovanja i operativna uska grla ciljnih firmi.',
+    'cs.3.m': 'Kvalifikovani lidovi', 'cs.3.r': 'strukturisani i spremni za kontakt, bez ručnog istraživanja.',
+    'cs.3.a1': 'Lista ciljnih domena',
+    'cs.3.a2': 'Crawler + detekcija tehnologija + klasifikacija poslovanja',
+    'cs.3.a3': 'Strukturisana lista kvalifikovanih lidova (CSV / CRM)',
+
+    'why.kicker': '// zašto ja', 'why.title': 'Bez agencijskih posrednika. Bez zaključavanja.',
+    'why.1.t': 'Direktan rad sa senior inženjerom', 'why.1.d': 'Bez account menadžera i agencijskih troškova — razgovarate direktno sa osobom koja gradi vaš sistem.',
+    'why.2.t': 'Duboko razumevanje trgovine i ERP tokova', 'why.2.d': 'Iskustvo iz produkcije sa složenim Magento/e-commerce arhitekturama, logikom lagera i B2B poslovanjem.',
+    'why.3.t': 'Dokaz vrednosti za 3–5 dana', 'why.3.d': 'Testirajte automatizaciju na svojim stvarnim podacima kroz mali pilot, pre nego što se obavežete na veći projekat.',
+    'why.4.t': '100% vlasništvo nad rešenjem', 'why.4.d': 'Rešenje radi na vašem serveru ili cloud nalogu — bez zaključavanja za jednog dobavljača i bez skupih mesečnih SaaS pretplata.',
+
+    'proc.title': 'Kako radimo',
     'proc.1.t': 'Analiza procesa (15–30 min)', 'proc.1.d': 'Identifikujemo ručni korak koji vašu firmu najviše košta — u vremenu, greškama i propuštenim porudžbinama.',
     'proc.2.t': 'Brzi pilot (3–5 dana)', 'proc.2.d': 'Pravimo i puštamo u rad funkcionalnu automatizaciju na jednom konkretnom procesu, pre bilo kakve veće obaveze sa vaše strane.',
     'proc.3.t': 'Puna implementacija i podrška', 'proc.3.d': 'Produkcijsko puštanje u rad, nadzor sistema i redovno održavanje, uz jasnu dokumentaciju za vaš tim.',
-    'int.kicker': '// integracije', 'int.title': 'Radimo sa softverom koji već koristite.',
-    'int.sub': 'Ne menjamo vaš ERP ni webshop — povezujemo ih. Ako sistem ima API, bazu, izvoz fajlova ili email, može da se automatizuje.',
-    'int.g.erp': 'ERP i poslovni programi', 'int.g.shop': 'Webshop platforme', 'int.g.courier': 'Kurirske službe', 'int.g.ai': 'Automatizacija i AI',
+
+    'pr.kicker': '// cenovnik', 'pr.title': 'Transparentne cene, jasan obim posla.', 'pr.popular': 'Najčešći izbor', 'pr.cta': 'Zatražite ponudu',
+    'pr.1.n': 'Pilot automatizacija', 'pr.1.price': '250 – 400 €', 'pr.1.time': '3–5 dana',
+    'pr.1.d': 'Idealno za rešavanje jednog hitnog uskog grla.',
+    'pr.1.b1': 'Automatski parser cenovnika dobavljača', 'pr.1.b2': 'Ekstraktor podataka iz PDF faktura', 'pr.1.b3': 'Jedan API ili webhook most',
+    'pr.2.n': 'Kompletna integracija', 'pr.2.price': '700 – 1.500 €', 'pr.2.time': '1–3 nedelje',
+    'pr.2.d': 'Rešenje od početka do kraja, prilagođeno svakodnevnom radu vašeg tima.',
+    'pr.2.b1': 'Kompletna ERP + webshop + kurirska sinhronizacija', 'pr.2.b2': 'ili custom AI tok rada po meri', 'pr.2.b3': 'Produkcijsko puštanje u rad i dokumentacija',
+    'pr.3.n': 'Održavanje i nadzor', 'pr.3.price': '100 – 150 € / mes.', 'pr.3.time': 'Opciono',
+    'pr.3.d': 'Da sve radi i kada dobavljači promene nešto na svojoj strani.',
+    'pr.3.b1': 'Proaktivno praćenje grešaka', 'pr.3.b2': 'Prilagođavanje kada dobavljači promene format ili API', 'pr.3.b3': 'Prioritetna podrška',
+    'pr.note': 'Svaki projekat počinje besplatnim 15-minutnim razgovorom i konkretnom procenom uštede vremena pre početka rada.',
+
     'ct.kicker': '// kontakt', 'ct.title': 'Zakažite besplatnu analizu procesa.',
     'ct.sub': 'Opišite proces koji vam oduzima najviše vremena. Javiću vam se sa konkretnim predlogom.',
     'ct.copy': 'kopiraj', 'ct.copied': 'kopirano ✓', 'ct.phone': 'Telefon / WhatsApp / Viber', 'ct.loc': 'Lokacija', 'ct.locv': 'Niš, Srbija (rad lokalno i globalno)',
@@ -260,26 +473,85 @@ const I18N = {
   en: {
     'meta.title': 'savicdev — Business Process Automation & ERP Integrations',
     'meta.desc': 'Business process automation, ERP integrations and custom AI workflows — without replacing your existing software.',
-    'nav.services': 'Services', 'nav.process': 'Process', 'nav.integrations': 'Integrations', 'nav.contact': 'Contact', 'nav.cta': 'Book a Call',
+    'nav.services': 'Services', 'nav.cases': 'Case Studies', 'nav.why': 'Why Me', 'nav.pricing': 'Pricing', 'nav.contact': 'Contact', 'nav.cta': 'Free Audit',
     'hero.badge': 'Marko Savić — AI & Software Automation Engineer',
     'hero.title': 'Business Process Automation, <span class="text-emerald-400">ERP Integrations</span> &amp; Custom AI Workflows.',
     'hero.sub': 'Eliminate manual invoice entry, sync inventory across your ERP and webshop, and automate B2B order processing — without replacing your existing software.',
-    'hero.cta1': 'Free Workflow Audit', 'hero.cta2': 'Explore Solutions',
+    'hero.cta1': 'Free Workflow Audit', 'hero.cta2': 'Explore Solutions', 'hero.works': 'Works with the systems you already use:',
     'trust.1': 'Day Pilot Delivery', 'trust.2': 'Disruption to Your Current ERP', 'trust.3': 'Document Extraction Accuracy',
-    'svc.kicker': '// services', 'svc.title': 'The three areas where your team loses the most hours — and how we fix them.',
-    'svc.1.t': 'ERP & E-Commerce Sync',
-    'svc.1.d': 'Real-time sync of stock levels, supplier pricing, and orders between your ERP/WMS and e-commerce storefront (Magento, WooCommerce, Shopify, custom APIs).',
-    'svc.2.t': 'AI Document & Invoice Processing',
-    'svc.2.d': 'Automated extraction of line items, SKUs, and quantities from supplier PDF invoices, price lists, and email/WhatsApp inquiries directly into your database or ERP.',
-    'svc.3.t': 'Custom B2B Workflow & Courier Automation',
-    'svc.3.d': 'End-to-end API bridges connecting couriers, internal SQL/REST systems, n8n pipelines, and RAG knowledge bases tailored to your operations.',
-    'proc.kicker': '// process', 'proc.title': 'From first call to production — without long upfront contracts.',
+
+    'lbl.problem': 'The problem', 'lbl.get': 'What you get', 'lbl.turnaround': 'Typical turnaround', 'lbl.solution': 'Solution', 'lbl.impact': 'Impact',
+    'lbl.arch': 'View Architecture', 'lbl.in': 'INPUT', 'lbl.proc': 'PROCESSING', 'lbl.out': 'OUTPUT',
+
+    'svc.kicker': '// what I offer', 'svc.title': 'Three services that directly cut manual work in your company.',
+    'svc.1.t': 'ERP & Webshop Sync',
+    'svc.1.p': 'Prices and stock are copied by hand from your ERP to your webshop, so customers order products you don’t have.',
+    'svc.1.b1': 'Automatic stock and price sync (Pantheon, Calculus, Lidder, SAP, Odoo)',
+    'svc.1.b2': 'Webshop orders (Magento, WooCommerce, Shopify) pushed into your ERP',
+    'svc.1.b3': 'Supplier price list imports without manual CSV files',
+    'svc.1.b4': 'Error alerts and a daily sync report',
+    'svc.1.time': '1–3 weeks',
+    'svc.2.t': 'AI Document, Invoice & Inquiry Processing',
+    'svc.2.p': 'Your team re-types line items from PDF invoices, price lists and email/WhatsApp inquiries every single day.',
+    'svc.2.b1': 'Extraction of line items, SKUs, quantities and prices from PDFs',
+    'svc.2.b2': 'Automatic matching to the item codes in your system',
+    'svc.2.b3': 'Email/WhatsApp inquiries turned into ready-to-send draft quotes',
+    'svc.2.b4': 'Human review only for low-confidence items',
+    'svc.2.time': '3–10 days',
+    'svc.3.t': 'Custom B2B Integrations & Couriers',
+    'svc.3.p': 'Couriers, CRM, databases and internal tools don’t talk to each other, so data moves between them by hand.',
+    'svc.3.b1': 'Automatic shipment creation and tracking (DExpress, AKS, PostExpress, DHL)',
+    'svc.3.b2': 'API bridges between SQL/REST systems and your CRM',
+    'svc.3.b3': 'n8n workflows for repetitive tasks',
+    'svc.3.b4': 'Internal knowledge base (RAG) over your documentation',
+    'svc.3.time': '1–3 weeks',
+
+    'cs.kicker': '// case studies', 'cs.title': 'Automation projects from real operations.',
+    'cs.1.t': 'Inventory & Pricing Automation',
+    'cs.1.p': 'A multi-warehouse technical distributor with 15,000+ SKUs imported stock levels and supplier prices through manual CSV files, leading to cancelled orders for out-of-stock items.',
+    'cs.1.s': 'Automated bi-directional sync of per-warehouse stock and supplier price lists between the ERP and the webshop, with validation and error alerts.',
+    'cs.1.m': '0 manual CSV imports', 'cs.1.r': 'Fewer out-of-stock cancellations across 15,000+ SKUs.',
+    'cs.1.a1': 'Per-warehouse ERP stock + supplier price lists (CSV / XLSX / API)',
+    'cs.1.a2': 'Python service: SKU normalization, pricing rules, validation',
+    'cs.1.a3': 'Webshop updated at short intervals + error report',
+    'cs.2.t': 'AI Extraction of PDF Invoices & B2B Inquiries',
+    'cs.2.p': 'Purchasing and sales staff manually re-typed line items from supplier PDF invoices and quote requests from email and Viber.',
+    'cs.2.s': 'A Python + LLM pipeline that turns unstructured PDF invoices and inquiries into structured, ERP-ready tables with automatic SKU matching.',
+    'cs.2.m': '10+ hours / week', 'cs.2.r': 'of manual typing saved, with fewer errors.',
+    'cs.2.a1': 'Supplier PDF invoices, email and Viber inquiries',
+    'cs.2.a2': 'Text extraction + LLM parsing + SKU matching',
+    'cs.2.a3': 'ERP-ready import table / draft quote',
+    'cs.3.t': 'B2B Market Intelligence & Lead Pipeline',
+    'cs.3.p': 'Researching potential B2B clients by hand took hours per company, with no clear criteria for who was actually a good fit.',
+    'cs.3.s': 'An automated domain crawler and Python classifier that detects the tech stack, business type and operational bottlenecks of target companies.',
+    'cs.3.m': 'Qualified leads', 'cs.3.r': 'structured and ready for outreach, without manual research.',
+    'cs.3.a1': 'List of target domains',
+    'cs.3.a2': 'Crawler + tech-stack detection + business classification',
+    'cs.3.a3': 'Structured list of qualified leads (CSV / CRM)',
+
+    'why.kicker': '// why me', 'why.title': 'No agency middlemen. No lock-in.',
+    'why.1.t': 'Direct Engineer Access', 'why.1.d': 'No account managers or agency overhead — you talk directly to the person building your system.',
+    'why.2.t': 'Commercial & E-Commerce DNA', 'why.2.d': 'Proven production background in complex Magento/e-commerce architectures, inventory logic, and B2B operations.',
+    'why.3.t': 'Rapid Pilot First', 'why.3.d': 'Test the automation on your real data with a small pilot before committing to a larger rollout.',
+    'why.4.t': 'Full Code & Data Ownership', 'why.4.d': 'Runs on your own server or cloud account with zero vendor lock-in and no bloated recurring SaaS fees.',
+
+    'proc.title': 'How we work',
     'proc.1.t': 'Workflow Audit (15–30 min)', 'proc.1.d': 'Identify the highest-cost manual bottleneck in your operations — in hours, errors, and missed orders.',
     'proc.2.t': 'Rapid Pilot (3–5 Days)', 'proc.2.d': 'Build and deploy a working automation on one concrete process before any full-scale commitment.',
     'proc.3.t': 'Full Rollout & Support', 'proc.3.d': 'Production deployment, monitoring, and ongoing maintenance, with clear documentation for your team.',
-    'int.kicker': '// integrations', 'int.title': 'We work with the software you already run.',
-    'int.sub': 'We don’t replace your ERP or webshop — we connect them. If a system has an API, a database, a file export, or an inbox, it can be automated.',
-    'int.g.erp': 'ERP & Business Software', 'int.g.shop': 'E-Commerce Platforms', 'int.g.courier': 'Couriers & Logistics', 'int.g.ai': 'Automation & AI',
+
+    'pr.kicker': '// pricing', 'pr.title': 'Transparent pricing, clear scope.', 'pr.popular': 'Most Popular', 'pr.cta': 'Request a Quote',
+    'pr.1.n': 'Pilot Automation', 'pr.1.price': '€250 – 400', 'pr.1.time': '3–5 days',
+    'pr.1.d': 'Ideal for solving one urgent bottleneck.',
+    'pr.1.b1': 'Automated supplier price list parser', 'pr.1.b2': 'PDF invoice data extractor', 'pr.1.b3': 'A single API or webhook bridge',
+    'pr.2.n': 'Full Integration', 'pr.2.price': '€700 – 1,500', 'pr.2.time': '1–3 weeks',
+    'pr.2.d': 'An end-to-end solution tailored to your team’s daily operations.',
+    'pr.2.b1': 'Full ERP + webshop + courier sync', 'pr.2.b2': 'or a custom end-to-end AI workflow', 'pr.2.b3': 'Production deployment and documentation',
+    'pr.3.n': 'Maintenance & Monitoring', 'pr.3.price': '€100 – 150 / mo', 'pr.3.time': 'Optional',
+    'pr.3.d': 'Keeps everything running when suppliers change things on their end.',
+    'pr.3.b1': 'Proactive error monitoring', 'pr.3.b2': 'Updates when supplier formats or APIs change', 'pr.3.b3': 'Priority support',
+    'pr.note': 'Every project starts with a free 15-minute call and a concrete estimate of the time you’ll save — before any work begins.',
+
     'ct.kicker': '// contact', 'ct.title': 'Book your free workflow audit.',
     'ct.sub': 'Describe the process that costs you the most time. I’ll get back to you with a concrete proposal.',
     'ct.copy': 'copy', 'ct.copied': 'copied ✓', 'ct.phone': 'Phone / WhatsApp / Viber', 'ct.loc': 'Location', 'ct.locv': 'Niš, Serbia (Working globally & locally)',
@@ -293,17 +565,8 @@ const I18N = {
     'ft.rights': 'All rights reserved.', 'ft.switch': 'Srpski'
   }
 };
-
-const INTEGRATIONS = {
-  'int.g.erp': ['Pantheon', 'Calculus', 'Lidder', 'SAP', 'Odoo', 'WMS'],
-  'int.g.shop': ['Magento', 'WooCommerce', 'Shopify', 'Custom API'],
-  'int.g.courier': ['DExpress', 'AKS', 'PostExpress', 'DHL'],
-  'int.g.ai': ['n8n', 'REST / SQL', 'Python', 'LLM / RAG', 'OCR / PDF', 'Email / Viber']
-};
-document.getElementById('intGroups').innerHTML = Object.entries(INTEGRATIONS).map(([k, items]) =>
-  `<div><h3 class="font-semibold text-white" data-i18n="${k}"></h3><ul class="mt-4 flex flex-wrap gap-2">${
-    items.map(i => `<li class="rounded-md border border-white/10 bg-slate-900/60 px-3 py-1.5 font-mono text-xs text-slate-300">${i}</li>`).join('')
-  }</ul></div>`).join('');
+// self-check: both languages must define the same keys
+console.assert(Object.keys(I18N.sr).sort().join() === Object.keys(I18N.en).sort().join(), 'I18N: sr/en key mismatch');
 
 const store = {
   get() { try { return localStorage.getItem('lang'); } catch { return null; } },
@@ -345,6 +608,16 @@ menuBtn.addEventListener('click', () => {
   menuBtn.setAttribute('aria-expanded', open);
 });
 menu.addEventListener('click', e => { if (e.target.closest('a')) { menu.classList.add('hidden'); menuBtn.setAttribute('aria-expanded', false); } });
+
+// Scroll-spy: highlight the nav link of the section crossing the middle of the viewport.
+const navLinks = document.querySelectorAll('.nav-link');
+const spy = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+  });
+}, { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('main section[id]').forEach(s => spy.observe(s));
 
 document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', async () => {
   try { await navigator.clipboard.writeText(b.dataset.copy); } catch { return; }
