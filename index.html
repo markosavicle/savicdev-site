@@ -174,7 +174,7 @@
 
           <!-- PROJECT CARD START: cs.1 -->
           <article class="rounded-xl border border-white/10 bg-slate-950 p-7">
-            <span class="rounded-md bg-emerald-400/10 px-2 py-1 font-mono text-xs text-emerald-300">ERP ↔ E-Commerce Sync</span>
+            <span class="rounded-md bg-emerald-400/10 px-2 py-1 font-mono text-xs text-emerald-300">RAG · n8n · pgvector</span>
             <h3 class="mt-4 text-lg font-semibold text-white" data-i18n="cs.1.t"></h3>
             <dl class="mt-4 space-y-4 text-sm">
               <div><dt class="font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.problem"></dt><dd class="mt-1 leading-relaxed text-slate-400" data-i18n="cs.1.p"></dd></div>
@@ -191,12 +191,13 @@
                 <li class="rounded-lg border border-white/10 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.out"></span><span data-i18n="cs.1.a3"></span></li>
               </ol>
             </details>
+            <p class="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm font-semibold"><a href="https://github.com/markosavicle/legal-rag-assistant" target="_blank" rel="noopener" class="text-emerald-400 hover:text-emerald-300" data-i18n="lbl.repo"></a><a href="https://github.com/markosavicle/legal-rag-assistant/tree/main/examples/demo" target="_blank" rel="noopener" class="text-emerald-400 hover:text-emerald-300" data-i18n="lbl.demo"></a></p>
           </article>
           <!-- PROJECT CARD END: cs.1 -->
 
           <!-- PROJECT CARD START: cs.2 -->
           <article class="rounded-xl border border-white/10 bg-slate-950 p-7">
-            <span class="rounded-md bg-emerald-400/10 px-2 py-1 font-mono text-xs text-emerald-300">Python + LLM</span>
+            <span class="rounded-md bg-emerald-400/10 px-2 py-1 font-mono text-xs text-emerald-300">Laravel · interni ERP</span>
             <h3 class="mt-4 text-lg font-semibold text-white" data-i18n="cs.2.t"></h3>
             <dl class="mt-4 space-y-4 text-sm">
               <div><dt class="font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.problem"></dt><dd class="mt-1 leading-relaxed text-slate-400" data-i18n="cs.2.p"></dd></div>
@@ -213,6 +214,7 @@
                 <li class="rounded-lg border border-white/10 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.out"></span><span data-i18n="cs.2.a3"></span></li>
               </ol>
             </details>
+            <p class="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm font-semibold"><a href="https://github.com/markosavicle/Magacin" target="_blank" rel="noopener" class="text-emerald-400 hover:text-emerald-300" data-i18n="lbl.repo"></a></p>
           </article>
           <!-- PROJECT CARD END: cs.2 -->
 
@@ -387,7 +389,7 @@ const I18N = {
     'trust.1': 'dana za prvi pilot', 'trust.2': 'promene postojećeg ERP-a', 'trust.3': 'tačnost obrade dokumenata',
 
     'lbl.problem': 'Problem', 'lbl.get': 'Šta dobijate', 'lbl.turnaround': 'Okvirni rok', 'lbl.solution': 'Rešenje', 'lbl.impact': 'Rezultat',
-    'lbl.arch': 'Pogledaj arhitekturu', 'lbl.in': 'ULAZ', 'lbl.proc': 'OBRADA', 'lbl.out': 'IZLAZ',
+    'lbl.arch': 'Pogledaj arhitekturu', 'lbl.repo': 'Kod na GitHub-u →', 'lbl.demo': 'Pravi odgovori →', 'lbl.in': 'ULAZ', 'lbl.proc': 'OBRADA', 'lbl.out': 'IZLAZ',
 
     'svc.kicker': '// šta nudim', 'svc.title': 'Tri usluge koje direktno smanjuju ručni rad u vašoj firmi.',
     'svc.1.t': 'ERP i webshop sinhronizacija',
@@ -412,21 +414,21 @@ const I18N = {
     'svc.3.b4': 'Interna baza znanja (RAG) nad vašom dokumentacijom',
     'svc.3.time': '1–3 nedelje',
 
-    'cs.kicker': '// primeri projekata', 'cs.title': 'Primeri automatizacija iz prakse.',
-    'cs.1.t': 'Automatizacija lagera i cena',
-    'cs.1.p': 'Tehnički distributer sa više magacina i 15.000+ artikala ručno je uvozio CSV fajlove sa stanjima i cenama dobavljača, što je dovodilo do otkazanih porudžbina za robu koje nema.',
-    'cs.1.s': 'Dvosmerna automatska sinhronizacija stanja po magacinima i cenovnika dobavljača između ERP-a i webshop-a, sa validacijom i upozorenjima na greške.',
-    'cs.1.m': '0 ručnih CSV uvoza', 'cs.1.r': 'Manje otkazanih porudžbina zbog nestanka robe na 15.000+ artikala.',
-    'cs.1.a1': 'Stanja po magacinima iz ERP-a + cenovnici dobavljača (CSV / XLSX / API)',
-    'cs.1.a2': 'Python servis: normalizacija šifara, pravila formiranja cena, validacija',
-    'cs.1.a3': 'Webshop ažuriran u kratkim intervalima + izveštaj o greškama',
-    'cs.2.t': 'AI ekstrakcija PDF faktura i B2B upita',
-    'cs.2.p': 'Nabavka i prodaja su ručno prekucavale stavke iz PDF faktura dobavljača i upite za ponude sa emaila i Vibera.',
-    'cs.2.s': 'Python + LLM pipeline koji nestrukturisane PDF fakture i upite pretvara u strukturisane tabele spremne za ERP, uz automatsko uparivanje šifara artikala.',
-    'cs.2.m': '10+ sati nedeljno', 'cs.2.r': 'ušteđeno na ručnom prekucavanju, uz manje grešaka.',
-    'cs.2.a1': 'PDF fakture dobavljača, upiti sa emaila i Vibera',
-    'cs.2.a2': 'Ekstrakcija teksta + LLM parsiranje + uparivanje šifara artikala',
-    'cs.2.a3': 'Tabela spremna za uvoz u ERP / nacrt ponude',
+    'cs.kicker': '// primeri projekata', 'cs.title': 'Sistemi koje sam napravio, sa kodom koji možete da pogledate.',
+    'cs.1.t': 'Privatni AI asistent za zakone i ugovore',
+    'cs.1.p': 'Pravnici, računovođe i HR satima traže odgovore po zakonima i ugovorima. Opšti chatbotovi izmišljaju članove, ne čitaju službene PDF-ove na ćirilici i ne kažu kad odgovora nema.',
+    'cs.1.s': 'RAG sistem na sopstvenom serveru: deli zakone po članovima, pretražuje i latinicu i ćirilicu, odgovara na srpskom uz citat tačnog pasusa i kaže „nema u dokumentima“ kad nema. Objavljen n8n node ga povezuje sa mejlom i Slackom, uz čoveka koji odobrava svaki odgovor.',
+    'cs.1.m': '98/100 tačnih odgovora', 'cs.1.r': 'sa ispravnim citatom na test setu od 100 pitanja; 0 izmišljenih odgovora i 13/13 ispravnih odbijanja.',
+    'cs.1.a1': 'Zakoni i ugovori (PDF / DOCX / TXT), pitanja iz web aplikacije, mejla ili n8n-a',
+    'cs.1.a2': 'FastAPI + PostgreSQL/pgvector: podela po članovima, transliteracija, hibridna pretraga, LLM sa obaveznim citatima',
+    'cs.1.a3': 'Odgovor sa izvorima + oznaka „odgovoreno / proslediti čoveku“ za n8n tok',
+    'cs.2.t': 'Kartica partnera i fakture za veleprodaju',
+    'cs.2.p': 'Distributer vodi kupce, dobavljače, fakture i uplate u Excelu. Saldo se računa ručno, kartica partnera se sklapa pred svaki poziv, a niko ne zna ko je šta promenio.',
+    'cs.2.s': 'Interna web aplikacija: partneri sa PIB-om, ulazne i izlazne fakture sa stavkama, uplate i isplate, automatski saldo, PDF kartica partnera za bilo koji period, istorija svih izmena i odobravanje novih korisnika.',
+    'cs.2.m': 'Kartica partnera u 1 klik', 'cs.2.r': 'uz noćni backup i automatsku proveru da li se saldo i iznosi faktura slažu sa izvornim podacima.',
+    'cs.2.a1': 'Fakture sa stavkama, uplate i isplate po partneru',
+    'cs.2.a2': 'Laravel + PostgreSQL: saldo po partneru, audit log, noćna kontrola konzistentnosti',
+    'cs.2.a3': 'PDF kartica partnera i faktura + upozorenje na neslaganja',
     'cs.3.t': 'B2B analiza tržišta i pipeline potencijalnih klijenata',
     'cs.3.p': 'Ručno istraživanje potencijalnih B2B klijenata trajalo je satima po firmi, bez jasnog kriterijuma ko je zaista dobar kandidat.',
     'cs.3.s': 'Automatski crawler domena i Python klasifikator koji prepoznaje tehnologije, tip poslovanja i operativna uska grla ciljnih firmi.',
@@ -481,7 +483,7 @@ const I18N = {
     'trust.1': 'Day Pilot Delivery', 'trust.2': 'Disruption to Your Current ERP', 'trust.3': 'Document Extraction Accuracy',
 
     'lbl.problem': 'The problem', 'lbl.get': 'What you get', 'lbl.turnaround': 'Typical turnaround', 'lbl.solution': 'Solution', 'lbl.impact': 'Impact',
-    'lbl.arch': 'View Architecture', 'lbl.in': 'INPUT', 'lbl.proc': 'PROCESSING', 'lbl.out': 'OUTPUT',
+    'lbl.arch': 'View Architecture', 'lbl.repo': 'Code on GitHub →', 'lbl.demo': 'Real answers →', 'lbl.in': 'INPUT', 'lbl.proc': 'PROCESSING', 'lbl.out': 'OUTPUT',
 
     'svc.kicker': '// what I offer', 'svc.title': 'Three services that directly cut manual work in your company.',
     'svc.1.t': 'ERP & Webshop Sync',
@@ -506,21 +508,21 @@ const I18N = {
     'svc.3.b4': 'Internal knowledge base (RAG) over your documentation',
     'svc.3.time': '1–3 weeks',
 
-    'cs.kicker': '// case studies', 'cs.title': 'Automation projects from real operations.',
-    'cs.1.t': 'Inventory & Pricing Automation',
-    'cs.1.p': 'A multi-warehouse technical distributor with 15,000+ SKUs imported stock levels and supplier prices through manual CSV files, leading to cancelled orders for out-of-stock items.',
-    'cs.1.s': 'Automated bi-directional sync of per-warehouse stock and supplier price lists between the ERP and the webshop, with validation and error alerts.',
-    'cs.1.m': '0 manual CSV imports', 'cs.1.r': 'Fewer out-of-stock cancellations across 15,000+ SKUs.',
-    'cs.1.a1': 'Per-warehouse ERP stock + supplier price lists (CSV / XLSX / API)',
-    'cs.1.a2': 'Python service: SKU normalization, pricing rules, validation',
-    'cs.1.a3': 'Webshop updated at short intervals + error report',
-    'cs.2.t': 'AI Extraction of PDF Invoices & B2B Inquiries',
-    'cs.2.p': 'Purchasing and sales staff manually re-typed line items from supplier PDF invoices and quote requests from email and Viber.',
-    'cs.2.s': 'A Python + LLM pipeline that turns unstructured PDF invoices and inquiries into structured, ERP-ready tables with automatic SKU matching.',
-    'cs.2.m': '10+ hours / week', 'cs.2.r': 'of manual typing saved, with fewer errors.',
-    'cs.2.a1': 'Supplier PDF invoices, email and Viber inquiries',
-    'cs.2.a2': 'Text extraction + LLM parsing + SKU matching',
-    'cs.2.a3': 'ERP-ready import table / draft quote',
+    'cs.kicker': '// case studies', 'cs.title': 'Systems I built, with code you can inspect.',
+    'cs.1.t': 'Private AI Assistant for Laws & Contracts',
+    'cs.1.p': 'Legal, accounting and HR teams spend hours searching laws and contracts. Generic chatbots invent article numbers, cannot read official Cyrillic PDFs, and never admit when the answer is missing.',
+    'cs.1.s': 'A self-hosted RAG system that splits laws by article, searches Latin and Cyrillic alike, answers in Serbian or English with a citation to the exact passage, and says so when the documents do not cover the question. A published n8n node connects it to email and Slack, with a person approving every reply.',
+    'cs.1.m': '98/100 correct answers', 'cs.1.r': 'with the right citation on a 100-question test set; zero hallucinated answers and 13/13 correct refusals.',
+    'cs.1.a1': 'Laws and contracts (PDF / DOCX / TXT), questions from the web app, email or n8n',
+    'cs.1.a2': 'FastAPI + PostgreSQL/pgvector: article-aware chunking, transliteration, hybrid search, LLM with mandatory citations',
+    'cs.1.a3': 'Answer with sources + an answered / escalate flag for the n8n workflow',
+    'cs.2.t': 'Partner Ledger & Invoicing for Wholesale',
+    'cs.2.p': 'A distributor tracks customers, suppliers, invoices and payments in Excel. Balances are worked out by hand, partner statements are assembled before every call, and nobody knows who changed what.',
+    'cs.2.s': 'An internal web app: partners with tax IDs, incoming and outgoing invoices with line items, payments, automatic balances, a PDF partner statement for any period, a full change history and admin approval for new users.',
+    'cs.2.m': 'Partner statement in 1 click', 'cs.2.r': 'plus nightly backups and an automatic check that balances and invoice totals match the source records.',
+    'cs.2.a1': 'Invoices with line items, payments in and out per partner',
+    'cs.2.a2': 'Laravel + PostgreSQL: per-partner balance, audit log, nightly consistency check',
+    'cs.2.a3': 'PDF partner statement and invoice + mismatch alerts',
     'cs.3.t': 'B2B Market Intelligence & Lead Pipeline',
     'cs.3.p': 'Researching potential B2B clients by hand took hours per company, with no clear criteria for who was actually a good fit.',
     'cs.3.s': 'An automated domain crawler and Python classifier that detects the tech stack, business type and operational bottlenecks of target companies.',
