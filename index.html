@@ -3,17 +3,81 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>savicdev — Business Process Automation &amp; ERP Integrations | Automatizacija procesa i ERP integracije</title>
-  <meta name="description" content="Automatizacija poslovnih procesa, ERP integracije i AI rešenja za moderne firme. Bez menjanja vašeg postojećeg softvera.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://savicdev.com/">
-  <meta property="og:title" content="savicdev — Business Process Automation &amp; ERP Integrations | Automatizacija procesa i ERP integracije">
-  <meta property="og:description" content="Business process automation, ERP integrations and custom AI workflows — without replacing your existing software. Automatizacija poslovnih procesa, ERP integracije i AI rešenja za moderne firme.">
+  <title>savicdev — Automatizacija procesa i ERP integracije | Business process automation</title>
+  <meta name="description" content="Automatizacija poslovnih procesa, ERP i webshop integracije i AI obrada dokumenata za firme u Srbiji. Bez menjanja softvera koji već koristite. Pilot za 3–5 dana.">
+  <meta name="author" content="Marko Savić">
   <meta name="theme-color" content="#020617">
   <link rel="canonical" href="https://savicdev.com/">
   <link rel="alternate" hreflang="sr" href="https://savicdev.com/">
   <link rel="alternate" hreflang="en" href="https://savicdev.com/?lang=en">
+  <link rel="alternate" hreflang="x-default" href="https://savicdev.com/">
+
+  <!-- Link previews (Viber, WhatsApp, LinkedIn, Facebook, Slack, X). Crawlers don't run JS, so these stay Serbian-first.
+       Regenerate og-image.png from tools/og-image.html (1200×630 screenshot) if the headline changes. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="savicdev">
+  <meta property="og:locale" content="sr_RS">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:url" content="https://savicdev.com/">
+  <meta property="og:title" content="savicdev — Automatizacija procesa i ERP integracije">
+  <meta property="og:description" content="ERP i webshop sinhronizacija, kurirske službe i AI obrada faktura, bez menjanja softvera koji već koristite. Marko Savić, Niš.">
+  <meta property="og:image" content="https://savicdev.com/og-image.png">
+  <meta property="og:image:secure_url" content="https://savicdev.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="savicdev: automatizacija procesa, ERP integracije i AI rešenja za firme">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="savicdev — Automatizacija procesa i ERP integracije">
+  <meta name="twitter:description" content="ERP i webshop sinhronizacija, kurirske službe i AI obrada faktura, bez menjanja softvera koji već koristite.">
+  <meta name="twitter:image" content="https://savicdev.com/og-image.png">
+  <meta name="twitter:image:alt" content="savicdev: automatizacija procesa, ERP integracije i AI rešenja za firme">
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://savicdev.com/#business",
+        "name": "savicdev",
+        "url": "https://savicdev.com/",
+        "logo": "https://savicdev.com/icon-512.png",
+        "image": "https://savicdev.com/og-image.png",
+        "description": "Automatizacija poslovnih procesa, ERP i webshop integracije, integracije kurirskih službi i AI obrada dokumenata za firme.",
+        "email": "marko@savicdev.com",
+        "telephone": "+381628459232",
+        "address": { "@type": "PostalAddress", "addressLocality": "Niš", "addressCountry": "RS" },
+        "areaServed": ["RS", "Europe"],
+        "availableLanguage": ["sr", "en"],
+        "priceRange": "€250–€1500",
+        "founder": { "@id": "https://savicdev.com/#marko" },
+        "knowsAbout": ["ERP integration", "Magento", "WooCommerce", "n8n", "Retrieval-Augmented Generation", "Business process automation"]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://savicdev.com/#marko",
+        "name": "Marko Savić",
+        "jobTitle": "AI & Software Automation Engineer",
+        "url": "https://savicdev.com/",
+        "address": { "@type": "PostalAddress", "addressLocality": "Niš", "addressCountry": "RS" },
+        "sameAs": ["https://github.com/markosavicle", "https://www.npmjs.com/package/n8n-nodes-legal-rag"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://savicdev.com/#website",
+        "url": "https://savicdev.com/",
+        "name": "savicdev",
+        "inLanguage": ["sr", "en"],
+        "publisher": { "@id": "https://savicdev.com/#business" }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -62,11 +126,13 @@
         <svg class="h-7 w-7 shrink-0" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M24 8H12a4 4 0 0 0 0 8h8a4 4 0 0 1 0 8H8" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="8" r="3" fill="#10b981"/><circle cx="8" cy="24" r="3" fill="#10b981"/><circle cx="16" cy="16" r="2" fill="#ffffff"/></svg>
         <span>savic<span class="text-emerald-500">dev</span></span>
       </a>
-      <div class="hidden items-center gap-7 text-sm lg:flex">
+      <div class="hidden items-center gap-6 text-sm xl:flex">
         <a href="#services" class="nav-link hover:text-white" data-i18n="nav.services"></a>
         <a href="#cases" class="nav-link hover:text-white" data-i18n="nav.cases"></a>
         <a href="#why" class="nav-link hover:text-white" data-i18n="nav.why"></a>
+        <a href="#calc" class="nav-link hover:text-white" data-i18n="nav.calc"></a>
         <a href="#pricing" class="nav-link hover:text-white" data-i18n="nav.pricing"></a>
+        <a href="#faq" class="nav-link hover:text-white" data-i18n="nav.faq"></a>
         <a href="#contact" class="nav-link hover:text-white" data-i18n="nav.contact"></a>
       </div>
       <div class="flex items-center gap-3">
@@ -75,16 +141,18 @@
           <button type="button" data-lang="en" class="rounded px-2 py-1">EN</button>
         </div>
         <a href="#contact" class="hidden whitespace-nowrap rounded-md bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-emerald-400 sm:inline-block" data-i18n="nav.cta"></a>
-        <button type="button" id="menuBtn" class="rounded-md border border-white/10 p-2 lg:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menu">
+        <button type="button" id="menuBtn" class="rounded-md border border-white/10 p-2 xl:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menu">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
     </nav>
-    <div id="mobileMenu" class="hidden border-t border-white/5 px-4 pb-4 lg:hidden">
+    <div id="mobileMenu" class="hidden border-t border-white/5 px-4 pb-4 xl:hidden">
       <a href="#services" class="nav-link block py-3" data-i18n="nav.services"></a>
       <a href="#cases" class="nav-link block py-3" data-i18n="nav.cases"></a>
       <a href="#why" class="nav-link block py-3" data-i18n="nav.why"></a>
+      <a href="#calc" class="nav-link block py-3" data-i18n="nav.calc"></a>
       <a href="#pricing" class="nav-link block py-3" data-i18n="nav.pricing"></a>
+      <a href="#faq" class="nav-link block py-3" data-i18n="nav.faq"></a>
       <a href="#contact" class="nav-link block py-3" data-i18n="nav.contact"></a>
       <a href="#contact" class="mt-2 block rounded-md bg-emerald-500 px-4 py-3 text-center font-semibold text-slate-950" data-i18n="nav.cta"></a>
     </div>
@@ -359,27 +427,6 @@
           </article>
           <!-- PROJECT CARD END: cs.2 -->
 
-          <!-- PROJECT CARD START: cs.3 -->
-          <article class="rounded-2xl border border-white/10 bg-slate-950 p-5 sm:p-8">
-            <span class="rounded-md bg-emerald-400/10 px-2 py-1 font-mono text-xs text-emerald-300">Python Crawler</span>
-            <h3 class="mt-4 text-lg font-semibold text-white" data-i18n="cs.3.t"></h3>
-            <dl class="mt-4 grid gap-4 text-sm lg:grid-cols-3">
-              <div><dt class="font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.problem"></dt><dd class="mt-1 leading-relaxed text-slate-400" data-i18n="cs.3.p"></dd></div>
-              <div><dt class="font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.solution"></dt><dd class="mt-1 leading-relaxed text-slate-400" data-i18n="cs.3.s"></dd></div>
-              <div class="rounded-lg border border-emerald-400/20 bg-emerald-400/5 p-4"><dt class="font-mono text-xs uppercase tracking-wider text-emerald-300" data-i18n="lbl.impact"></dt><dd class="mt-1"><span class="block text-xl font-bold text-white" data-i18n="cs.3.m"></span><span class="text-slate-300" data-i18n="cs.3.r"></span></dd></div>
-            </dl>
-            <details class="mt-5 border-t border-white/5 pt-4">
-              <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-emerald-400 hover:text-emerald-300"><span data-i18n="lbl.arch"></span><svg class="chev transition" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
-              <ol class="mt-4 grid gap-2 text-sm sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:items-center">
-                <li class="rounded-lg border border-white/10 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.in"></span><span data-i18n="cs.3.a1"></span></li>
-                <li class="text-center text-emerald-400" aria-hidden="true"><span class="sm:hidden">↓</span><span class="hidden sm:inline">→</span></li>
-                <li class="rounded-lg border border-emerald-400/30 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.proc"></span><span data-i18n="cs.3.a2"></span></li>
-                <li class="text-center text-emerald-400" aria-hidden="true"><span class="sm:hidden">↓</span><span class="hidden sm:inline">→</span></li>
-                <li class="rounded-lg border border-white/10 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.out"></span><span data-i18n="cs.3.a3"></span></li>
-              </ol>
-            </details>
-          </article>
-          <!-- PROJECT CARD END: cs.3 -->
 
         </div>
       </div>
@@ -407,8 +454,64 @@
       </div>
     </section>
 
+
+    <!-- Savings calculator: every number comes from the visitor's own inputs. -->
+    <section id="calc" class="scroll-mt-16 border-t border-white/5 bg-slate-900/30 py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <p class="font-mono text-sm text-emerald-400" data-i18n="calc.kicker"></p>
+        <h2 class="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-white sm:text-4xl" data-i18n="calc.title"></h2>
+        <p class="mt-4 max-w-2xl text-slate-400" data-i18n="calc.sub"></p>
+        <div class="mt-12 grid gap-6 lg:grid-cols-5">
+          <form id="calcForm" class="space-y-5 rounded-xl border border-white/10 bg-slate-950 p-6 sm:p-8 lg:col-span-3" novalidate>
+            <div>
+              <label for="c-task" class="block text-sm font-medium text-white" data-i18n="calc.task"></label>
+              <select id="c-task" class="mt-2 w-full rounded-md border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400">
+                <option value="t1" data-i18n="calc.t1"></option>
+                <option value="t2" data-i18n="calc.t2"></option>
+                <option value="t3" data-i18n="calc.t3"></option>
+                <option value="t4" data-i18n="calc.t4"></option>
+              </select>
+            </div>
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="c-items" class="block text-sm font-medium text-white" data-i18n="calc.items"></label>
+                <input id="c-items" type="number" inputmode="numeric" min="1" max="10000" step="1" value="30" class="mt-2 w-full rounded-md border border-white/10 bg-slate-900 px-4 py-3 font-mono text-white outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400">
+              </div>
+              <div>
+                <label for="c-min" class="block text-sm font-medium text-white" data-i18n="calc.min"></label>
+                <input id="c-min" type="number" inputmode="decimal" min="0.5" max="240" step="0.5" value="4" class="mt-2 w-full rounded-md border border-white/10 bg-slate-900 px-4 py-3 font-mono text-white outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400">
+              </div>
+              <div>
+                <label for="c-days" class="block text-sm font-medium text-white" data-i18n="calc.days"></label>
+                <input id="c-days" type="number" inputmode="numeric" min="1" max="31" step="1" value="21" class="mt-2 w-full rounded-md border border-white/10 bg-slate-900 px-4 py-3 font-mono text-white outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400">
+              </div>
+              <div>
+                <label for="c-rate" class="block text-sm font-medium text-white"><span data-i18n="calc.rate"></span> (<span id="c-cur"></span>)</label>
+                <input id="c-rate" type="number" inputmode="decimal" min="1" step="any" class="mt-2 w-full rounded-md border border-white/10 bg-slate-900 px-4 py-3 font-mono text-white outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400">
+              </div>
+            </div>
+            <div>
+              <label for="c-share" class="flex items-center justify-between text-sm font-medium text-white"><span data-i18n="calc.share"></span><output id="c-share-out" for="c-share" class="font-mono text-emerald-400"></output></label>
+              <input id="c-share" type="range" min="20" max="100" step="5" value="70" class="mt-3 w-full accent-emerald-500">
+              <p class="mt-2 text-xs text-slate-500" data-i18n="calc.share.hint"></p>
+            </div>
+          </form>
+          <div class="flex flex-col rounded-xl border-2 border-emerald-400/60 bg-slate-950 p-6 sm:p-8 lg:col-span-2" aria-live="polite">
+            <dl class="space-y-5">
+              <div><dt class="font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="calc.r.manual"></dt><dd class="mt-1 font-mono text-2xl font-bold text-white"><span id="r-manual"></span> <span class="text-base font-medium text-slate-400" data-i18n="calc.hmo"></span></dd></div>
+              <div><dt class="font-mono text-xs uppercase tracking-wider text-emerald-300" data-i18n="calc.r.saved"></dt><dd class="mt-1 font-mono text-3xl font-bold text-emerald-400"><span id="r-saved"></span> <span class="text-base font-medium text-slate-400" data-i18n="calc.hmo"></span></dd></div>
+              <div><dt class="font-mono text-xs uppercase tracking-wider text-emerald-300" data-i18n="calc.r.money"></dt><dd class="mt-1 font-mono text-3xl font-bold text-white"><span id="r-money"></span> <span class="text-base font-medium text-slate-400" data-i18n="calc.month"></span></dd><dd class="mt-1 text-sm text-slate-400" id="r-year"></dd></div>
+              <div class="border-t border-white/10 pt-5"><dt class="font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="calc.r.payback"></dt><dd class="mt-1 text-lg font-semibold text-white" id="r-payback"></dd></div>
+            </dl>
+            <button type="button" id="calcSend" class="mt-8 w-full rounded-md bg-emerald-500 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-400" data-i18n="calc.cta"></button>
+            <p class="mt-4 text-xs leading-relaxed text-slate-500" data-i18n="calc.note"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Pricing -->
-    <section id="pricing" class="scroll-mt-16 border-t border-white/5 bg-slate-900/30 py-24">
+    <section id="pricing" class="scroll-mt-16 border-t border-white/5 py-24">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <p class="font-mono text-sm text-emerald-400" data-i18n="pr.kicker"></p>
         <h2 class="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl" data-i18n="pr.title"></h2>
@@ -440,6 +543,110 @@
           </div>
         </div>
         <p class="mx-auto mt-10 max-w-2xl text-center text-sm text-slate-400" data-i18n="pr.note"></p>
+      </div>
+    </section>
+
+
+    <!-- FAQ: keep the FAQPage JSON-LD at the end of this section in sync with the Serbian answers. -->
+    <section id="faq" class="scroll-mt-16 border-t border-white/5 bg-slate-900/30 py-24">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <p class="font-mono text-sm text-emerald-400" data-i18n="faq.kicker"></p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl" data-i18n="faq.title"></h2>
+        <div class="mt-10 divide-y divide-white/10 rounded-xl border border-white/10 bg-slate-950">
+          <details class="group px-6 py-5" open>
+            <summary class="flex cursor-pointer items-start justify-between gap-4 font-semibold text-white"><span data-i18n="faq.1.q"></span><svg class="chev mt-1 shrink-0 text-emerald-400 transition" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-400" data-i18n="faq.1.a"></p>
+          </details>
+          <details class="group px-6 py-5">
+            <summary class="flex cursor-pointer items-start justify-between gap-4 font-semibold text-white"><span data-i18n="faq.2.q"></span><svg class="chev mt-1 shrink-0 text-emerald-400 transition" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-400" data-i18n="faq.2.a"></p>
+          </details>
+          <details class="group px-6 py-5">
+            <summary class="flex cursor-pointer items-start justify-between gap-4 font-semibold text-white"><span data-i18n="faq.3.q"></span><svg class="chev mt-1 shrink-0 text-emerald-400 transition" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-400" data-i18n="faq.3.a"></p>
+          </details>
+          <details class="group px-6 py-5">
+            <summary class="flex cursor-pointer items-start justify-between gap-4 font-semibold text-white"><span data-i18n="faq.4.q"></span><svg class="chev mt-1 shrink-0 text-emerald-400 transition" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-400" data-i18n="faq.4.a"></p>
+          </details>
+          <details class="group px-6 py-5">
+            <summary class="flex cursor-pointer items-start justify-between gap-4 font-semibold text-white"><span data-i18n="faq.5.q"></span><svg class="chev mt-1 shrink-0 text-emerald-400 transition" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-400" data-i18n="faq.5.a"></p>
+          </details>
+          <details class="group px-6 py-5">
+            <summary class="flex cursor-pointer items-start justify-between gap-4 font-semibold text-white"><span data-i18n="faq.6.q"></span><svg class="chev mt-1 shrink-0 text-emerald-400 transition" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-400" data-i18n="faq.6.a"></p>
+          </details>
+          <details class="group px-6 py-5">
+            <summary class="flex cursor-pointer items-start justify-between gap-4 font-semibold text-white"><span data-i18n="faq.7.q"></span><svg class="chev mt-1 shrink-0 text-emerald-400 transition" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-400" data-i18n="faq.7.a"></p>
+          </details>
+        </div>
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "sr",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Da li radite uz ugovor i fakturu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. Svaki projekat ide uz ugovor sa jasno opisanim obimom posla i regularnu fakturu preko računa firme. Bez keša i bez sive zone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kako se plaća i šta ako pilot ne uspe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Za pilot (250–400 €) plaća se 50% avansno kada se dogovori specifikacija, a ostalih 50% tek kada vidite radni rezultat na vašim podacima. Ako pilot ne reši dogovoreni zadatak, drugi deo se ne naplaćuje. Veći projekti se plaćaju po fazama (milestone-ima) koje dogovorimo unapred."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Da li imate gotov modul za Pantheon, Calculus ili naš webshop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ne prodajem gotove „plug-and-play“ module. Sisteme povezujem preko onoga što već nude: API, webhook-ovi ili XML/CSV razmena podataka. Zato svaka integracija prvo prolazi pilot na vašim stvarnim podacima, pa tek onda ide u svakodnevni rad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Moramo li da menjamo ERP ili webshop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ne. Automatizacija se dodaje uz sisteme koje već koristite. Vaš tim nastavlja da radi u istim programima, samo bez ručnog prenošenja podataka između njih."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gde su naši podaci i ko im ima pristup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rešenje radi na vašem serveru ili cloud nalogu, a ja dobijam samo pristup koji je potreban za posao. Za AI obradu dokumenata može se koristiti model koji radi lokalno, pa dokumenti ne napuštaju vaš server. Ako se koristi cloud AI servis, unapred dogovaramo koji i koji podaci mu se šalju."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Šta ako prestanemo da radimo zajedno?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kod, pristupi i dokumentacija su vaši. Rešenje radi na vašoj infrastrukturi, a dokumentacija je pisana tako da ga drugi programer može preuzeti. Mesečno održavanje je opciono."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Koliko vremena treba od našeg tima?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Za analizu procesa: razgovor od 15–30 minuta. Za pilot: primer stvarnih podataka (npr. nekoliko faktura ili izvoz cenovnika) i jedna osoba koja zna proces i može da proveri rezultat."
+      }
+    }
+  ]
+}
+        </script>
       </div>
     </section>
 
@@ -529,14 +736,14 @@
 <script>
 const I18N = {
   sr: {
-    'meta.title': 'savicdev — Automatizacija poslovnih procesa i ERP integracije',
-    'meta.desc': 'Automatizacija poslovnih procesa, ERP integracije i AI rešenja za moderne firme. Bez menjanja vašeg postojećeg softvera.',
+    'meta.title': 'savicdev — Automatizacija procesa i ERP integracije',
+    'meta.desc': 'Automatizacija poslovnih procesa, ERP i webshop integracije i AI obrada dokumenata za firme u Srbiji. Bez menjanja softvera koji već koristite. Pilot za 3–5 dana.',
     'nav.services': 'Šta nudim', 'nav.cases': 'Primeri projekata', 'nav.why': 'Zašto ja', 'nav.pricing': 'Cenovnik', 'nav.contact': 'Kontakt', 'nav.cta': 'Besplatna konsultacija',
     'hero.badge': 'Marko Savić — AI & Software Automation Engineer',
     'hero.title': 'Automatizacija poslovnih procesa, <span class="text-emerald-400">ERP integracije</span> i AI rešenja za moderne firme.',
     'hero.sub': 'Eliminišite ručno prekucavanje faktura, sinhronizujte lager sa webshop-om i ubrzajte obradu B2B porudžbina — bez menjanja vašeg postojećeg softvera.',
-    'hero.cta1': 'Besplatna analiza procesa', 'hero.cta2': 'Pogledajte rešenja', 'hero.works': 'Radi sa sistemima koje već koristite:',
-    'trust.1': 'dana za prvi pilot', 'trust.2': 'promene postojećeg ERP-a', 'trust.3': 'tačnost RAG evaluacije (0 halucinacija)',
+    'hero.cta1': 'Besplatna analiza procesa', 'hero.cta2': 'Pogledajte rešenja', 'hero.works': 'Povezujem preko API-ja, webhook-ova i XML/CSV razmene sa sistemima kao što su:',
+    'trust.1': 'dana za prvi pilot', 'trust.2': 'promene postojećeg ERP-a', 'trust.3': 'tačnih odgovora na testu od 100 pitanja (0 halucinacija)',
 
     'lbl.npm': 'n8n node na npm-u →', 'lr.mode': 'semantička pretraga · top 5', 'lr.q': 'Pitanje', 'lr.qgloss': '', 'lr.a': 'Odgovor', 'lr.agloss': '', 'lr.src': 'Citirani izvori', 'lr.page': 'str.', 'lr.stats': '12,7 s · 1.289 tokena', 'lr.badge': '98/100 eval · 0 halucinacija', 'lr.cap': 'Levo: pravi odgovor iz poslednjeg eval runa (slučaj cf-04), aneks u sukobu sa zakonom. Osobe i ugovori su izmišljeni, Zakon o radu je zvaničan tekst. Pređite mišem preko [1] i [2].', 'lr.f1': 'Mejl → Slack odobrenje', 'lr.f2': 'Ugovor → Google Sheet', 'lr.n.imap': 'Okidač: novi mejl', 'lr.n.if': 'IF: answered', 'lr.n.review': 'Slack · čeka odobrenje', 'lr.n.approved': 'IF: odobreno', 'lr.n.reply': 'Odgovor pošiljaocu', 'lr.n.escalate': 'Prosleđuje čoveku', 'lr.n.form': 'Okidač: forma', 'lr.n.code': 'Code', 'lr.n.sheet': 'Google Sheets · Append', 'lr.fcap': 'Primeri tokova iz repozitorijuma (n8n-nodes-legal-rag/examples), testirani na n8n 2.43.7. Nijedan odgovor ne odlazi bez odobrenja čoveka.', 'mg.zoom': 'Klik za uvećanje', 'mg.close': 'Zatvori ✕', 'mg.cap': 'Stranica partnera iz Magacin-a, verno prenesena u HTML (isti raspored, polja i format). Podaci su izmišljeni i dolaze iz DemoSeeder-a: veleprodaja pića i mlečnih proizvoda oko Niša. Kliknite „Transakcije“.', 
     'lbl.problem': 'Problem', 'lbl.get': 'Šta dobijate', 'lbl.turnaround': 'Okvirni rok', 'lbl.solution': 'Rešenje', 'lbl.impact': 'Rezultat',
@@ -545,7 +752,7 @@ const I18N = {
     'svc.kicker': '// šta nudim', 'svc.title': 'Tri usluge koje direktno smanjuju ručni rad u vašoj firmi.',
     'svc.1.t': 'ERP i webshop sinhronizacija',
     'svc.1.p': 'Cene i stanja lagera se ručno prebacuju iz poslovnog programa u webshop, pa kupci poručuju robu koje nema.',
-    'svc.1.b1': 'Automatska sinhronizacija lagera i cena (Pantheon, Calculus, Lidder, SAP, Odoo)',
+    'svc.1.b1': 'Automatska sinhronizacija lagera i cena preko API-ja ili XML/CSV izvoza (npr. Pantheon, Calculus, Lidder, SAP, Odoo)',
     'svc.1.b2': 'Prenos porudžbina iz webshop-a (Magento, WooCommerce, Shopify) u ERP',
     'svc.1.b3': 'Uvoz cenovnika dobavljača bez ručnih CSV fajlova',
     'svc.1.b4': 'Upozorenja na greške i dnevni izveštaj sinhronizacije',
@@ -559,7 +766,7 @@ const I18N = {
     'svc.2.time': '3–10 dana',
     'svc.3.t': 'Custom B2B integracije i kurirske službe',
     'svc.3.p': 'Kurirske službe, CRM, baze i interni alati ne komuniciraju, pa se podaci ručno prenose između sistema.',
-    'svc.3.b1': 'Automatsko kreiranje i praćenje pošiljki (DExpress, AKS, PostExpress, DHL)',
+    'svc.3.b1': 'Automatsko kreiranje i praćenje pošiljki preko API-ja kurirskih službi (npr. DExpress, AKS, PostExpress, DHL)',
     'svc.3.b2': 'API mostovi između SQL/REST sistema i CRM-a',
     'svc.3.b3': 'n8n tokovi rada za zadatke koji se ponavljaju',
     'svc.3.b4': 'Interna baza znanja (RAG) nad vašom dokumentacijom',
@@ -580,17 +787,10 @@ const I18N = {
     'cs.2.a1': 'Fakture sa stavkama, uplate i isplate po partneru',
     'cs.2.a2': 'Laravel + PostgreSQL: saldo po partneru, audit log, noćna kontrola konzistentnosti',
     'cs.2.a3': 'PDF kartica partnera i faktura + upozorenje na neslaganja',
-    'cs.3.t': 'B2B analiza tržišta i pipeline potencijalnih klijenata',
-    'cs.3.p': 'Ručno istraživanje potencijalnih B2B klijenata trajalo je satima po firmi, bez jasnog kriterijuma ko je zaista dobar kandidat.',
-    'cs.3.s': 'Automatski crawler domena i Python klasifikator koji prepoznaje tehnologije, tip poslovanja i operativna uska grla ciljnih firmi.',
-    'cs.3.m': 'Kvalifikovani lidovi', 'cs.3.r': 'strukturisani i spremni za kontakt, bez ručnog istraživanja.',
-    'cs.3.a1': 'Lista ciljnih domena',
-    'cs.3.a2': 'Crawler + detekcija tehnologija + klasifikacija poslovanja',
-    'cs.3.a3': 'Strukturisana lista kvalifikovanih lidova (CSV / CRM)',
 
     'why.kicker': '// zašto ja', 'why.title': 'Bez agencijskih posrednika. Bez zaključavanja.',
-    'why.1.t': 'Direktan rad sa senior inženjerom', 'why.1.d': 'Bez account menadžera i agencijskih troškova — razgovarate direktno sa osobom koja gradi vaš sistem.',
-    'why.2.t': 'Duboko razumevanje trgovine i ERP tokova', 'why.2.d': 'Iskustvo iz produkcije sa složenim Magento/e-commerce arhitekturama, logikom lagera i B2B poslovanjem.',
+    'why.1.t': 'Direktno sa inženjerom koji projektuje i piše sistem', 'why.1.d': 'Bez account menadžera i agencijskih troškova — razgovarate direktno sa osobom koja gradi vaš sistem.',
+    'why.2.t': 'Duboko razumevanje trgovine i ERP tokova', 'why.2.d': 'Adobe sertifikovan Magento developer, sa iskustvom iz produkcije u ERP/POS integracijama, logici lagera i B2B poslovanju.',
     'why.3.t': 'Dokaz vrednosti za 3–5 dana', 'why.3.d': 'Testirajte automatizaciju na svojim stvarnim podacima kroz mali pilot, pre nego što se obavežete na veći projekat.',
     'why.4.t': '100% vlasništvo nad rešenjem', 'why.4.d': 'Rešenje radi na vašem serveru ili cloud nalogu — bez zaključavanja za jednog dobavljača i bez skupih mesečnih SaaS pretplata.',
 
@@ -621,17 +821,61 @@ const I18N = {
     'f.ok': 'Hvala! Poruka je poslata — javiću vam se uskoro.',
     'f.err': 'Slanje nije uspelo. Pišite direktno na marko@savicdev.com.',
     'f.note': 'Vaši podaci se koriste isključivo za odgovor na upit.',
+    'nav.calc': 'Kalkulator',
+    'nav.faq': 'Pitanja',
+    'calc.kicker': '// kalkulator uštede',
+    'calc.title': 'Koliko vas ručni rad košta svakog meseca?',
+    'calc.sub': 'Upišite svoje brojeve. Kalkulator nema ugrađene pretpostavljene rezultate: sve se računa samo iz vaših unosa.',
+    'calc.task': 'Koji posao se radi ručno?',
+    'calc.t1': 'Prekucavanje faktura i cenovnika dobavljača',
+    'calc.t2': 'Prenos porudžbina iz webshop-a u ERP',
+    'calc.t3': 'Ažuriranje lagera i cena na webshop-u',
+    'calc.t4': 'Odgovaranje na upite i pravljenje ponuda',
+    'calc.items': 'Koliko stavki dnevno? (fakture, porudžbine, upiti)',
+    'calc.min': 'Minuta po stavci',
+    'calc.days': 'Radnih dana mesečno',
+    'calc.rate': 'Trošak sata rada zaposlenog',
+    'calc.share': 'Deo posla koji se automatizuje',
+    'calc.share.hint': 'Ostatak ostaje za ručnu proveru, npr. nesigurne stavke. Tačan procenat znamo tek posle pilota na vašim podacima.',
+    'calc.r.manual': 'Ručni rad danas',
+    'calc.r.saved': 'Oslobođeno vreme',
+    'calc.hmo': 'h / mes.',
+    'calc.r.money': 'Vrednost oslobođenog vremena',
+    'calc.month': 'mesečno',
+    'calc.year': 'godišnje',
+    'calc.r.payback': 'Povrat pilota (250–400 €)',
+    'calc.pb': 'za oko {range}',
+    'calc.pb.low': 'Sa ovim brojevima plaćeni pilot se verovatno ne isplati. Ako obim posla raste, javite se, pa da proverimo zajedno.',
+    'calc.cta': 'Pošaljite ovu procenu uz upit',
+    'calc.note': 'Procena na osnovu vaših unosa, nije garancija uštede. Konkretnu procenu dajem posle besplatne analize procesa. Kurs u računu: 1 € = 117 RSD.',
+    'calc.msg': 'Procena iz kalkulatora na sajtu.\nPosao: {task}\nStavki dnevno: {items}, minuta po stavci: {min}, radnih dana mesečno: {days}\nRučni rad: {manual} h mesečno\nAko se automatizuje {share}%: oko {saved} h mesečno, vrednost oko {money}\n\nNaš proces: ',
+    'faq.kicker': '// česta pitanja',
+    'faq.title': 'Pre nego što se javite',
+    'faq.1.q': 'Da li radite uz ugovor i fakturu?',
+    'faq.1.a': 'Da. Svaki projekat ide uz ugovor sa jasno opisanim obimom posla i regularnu fakturu preko računa firme. Bez keša i bez sive zone.',
+    'faq.2.q': 'Kako se plaća i šta ako pilot ne uspe?',
+    'faq.2.a': 'Za pilot (250–400 €) plaća se 50% avansno kada se dogovori specifikacija, a ostalih 50% tek kada vidite radni rezultat na vašim podacima. Ako pilot ne reši dogovoreni zadatak, drugi deo se ne naplaćuje. Veći projekti se plaćaju po fazama (milestone-ima) koje dogovorimo unapred.',
+    'faq.3.q': 'Da li imate gotov modul za Pantheon, Calculus ili naš webshop?',
+    'faq.3.a': 'Ne prodajem gotove „plug-and-play“ module. Sisteme povezujem preko onoga što već nude: API, webhook-ovi ili XML/CSV razmena podataka. Zato svaka integracija prvo prolazi pilot na vašim stvarnim podacima, pa tek onda ide u svakodnevni rad.',
+    'faq.4.q': 'Moramo li da menjamo ERP ili webshop?',
+    'faq.4.a': 'Ne. Automatizacija se dodaje uz sisteme koje već koristite. Vaš tim nastavlja da radi u istim programima, samo bez ručnog prenošenja podataka između njih.',
+    'faq.5.q': 'Gde su naši podaci i ko im ima pristup?',
+    'faq.5.a': 'Rešenje radi na vašem serveru ili cloud nalogu, a ja dobijam samo pristup koji je potreban za posao. Za AI obradu dokumenata može se koristiti model koji radi lokalno, pa dokumenti ne napuštaju vaš server. Ako se koristi cloud AI servis, unapred dogovaramo koji i koji podaci mu se šalju.',
+    'faq.6.q': 'Šta ako prestanemo da radimo zajedno?',
+    'faq.6.a': 'Kod, pristupi i dokumentacija su vaši. Rešenje radi na vašoj infrastrukturi, a dokumentacija je pisana tako da ga drugi programer može preuzeti. Mesečno održavanje je opciono.',
+    'faq.7.q': 'Koliko vremena treba od našeg tima?',
+    'faq.7.a': 'Za analizu procesa: razgovor od 15–30 minuta. Za pilot: primer stvarnih podataka (npr. nekoliko faktura ili izvoz cenovnika) i jedna osoba koja zna proces i može da proveri rezultat.',
     'ft.rights': 'Sva prava zadržana.', 'ft.switch': 'English'
   },
   en: {
     'meta.title': 'savicdev — Business Process Automation & ERP Integrations',
-    'meta.desc': 'Business process automation, ERP integrations and custom AI workflows — without replacing your existing software.',
+    'meta.desc': 'Business process automation, ERP and webshop integrations, and AI document processing — without replacing the software you already use. Pilot in 3–5 days.',
     'nav.services': 'Services', 'nav.cases': 'Case Studies', 'nav.why': 'Why Me', 'nav.pricing': 'Pricing', 'nav.contact': 'Contact', 'nav.cta': 'Free Audit',
     'hero.badge': 'Marko Savić — AI & Software Automation Engineer',
     'hero.title': 'Business Process Automation, <span class="text-emerald-400">ERP Integrations</span> &amp; Custom AI Workflows.',
     'hero.sub': 'Eliminate manual invoice entry, sync inventory across your ERP and webshop, and automate B2B order processing — without replacing your existing software.',
-    'hero.cta1': 'Free Workflow Audit', 'hero.cta2': 'Explore Solutions', 'hero.works': 'Works with the systems you already use:',
-    'trust.1': 'Day Pilot Delivery', 'trust.2': 'Disruption to Your Current ERP', 'trust.3': 'RAG Evaluation Accuracy (0 Hallucinations)',
+    'hero.cta1': 'Free Workflow Audit', 'hero.cta2': 'Explore Solutions', 'hero.works': 'Connected via API, webhooks and XML/CSV exchange to systems such as:',
+    'trust.1': 'Day Pilot Delivery', 'trust.2': 'Disruption to Your Current ERP', 'trust.3': 'Correct Answers on a 100-Question Test (0 Hallucinations)',
 
     'lbl.npm': 'n8n node on npm →', 'lr.mode': 'semantic search · top 5', 'lr.q': 'Question', 'lr.qgloss': '“Is the 18 working days of annual leave in Ana Jović’s contract annex compliant with the Labour Law?”', 'lr.a': 'Answer', 'lr.agloss': '“No: the law requires at least 20 working days of annual leave.” The system answers in the language of the question.', 'lr.src': 'Cited sources', 'lr.page': 'page', 'lr.stats': '12.7 s · 1,289 tokens', 'lr.badge': '98/100 eval · 0 hallucinations', 'lr.cap': 'Left: a real answer from the final eval run (case cf-04), an annex that conflicts with the law. People and contracts are fictional; the Labour Law is the official text. Hover over [1] and [2].', 'lr.f1': 'Email → Slack approval', 'lr.f2': 'Contract → Google Sheet', 'lr.n.imap': 'Trigger: new email', 'lr.n.if': 'IF: answered', 'lr.n.review': 'Slack · send and wait', 'lr.n.approved': 'IF: approved', 'lr.n.reply': 'Email reply', 'lr.n.escalate': 'Hands off to a person', 'lr.n.form': 'Trigger: form', 'lr.n.code': 'Code', 'lr.n.sheet': 'Google Sheets · Append', 'lr.fcap': 'Example workflows shipped in the repo (n8n-nodes-legal-rag/examples), tested on n8n 2.43.7. No answer goes out without a person approving it.', 'mg.zoom': 'Click to zoom', 'mg.close': 'Close ✕', 'mg.cap': 'The Magacin partner page, faithfully rebuilt in HTML (same layout, fields and formats). The data is fictional, from the app’s DemoSeeder: a drinks and dairy wholesaler around Niš. Click “Transakcije”.', 
     'lbl.problem': 'The problem', 'lbl.get': 'What you get', 'lbl.turnaround': 'Typical turnaround', 'lbl.solution': 'Solution', 'lbl.impact': 'Impact',
@@ -640,7 +884,7 @@ const I18N = {
     'svc.kicker': '// what I offer', 'svc.title': 'Three services that directly cut manual work in your company.',
     'svc.1.t': 'ERP & Webshop Sync',
     'svc.1.p': 'Prices and stock are copied by hand from your ERP to your webshop, so customers order products you don’t have.',
-    'svc.1.b1': 'Automatic stock and price sync (Pantheon, Calculus, Lidder, SAP, Odoo)',
+    'svc.1.b1': 'Automatic stock and price sync via API or XML/CSV exports (e.g. Pantheon, Calculus, Lidder, SAP, Odoo)',
     'svc.1.b2': 'Webshop orders (Magento, WooCommerce, Shopify) pushed into your ERP',
     'svc.1.b3': 'Supplier price list imports without manual CSV files',
     'svc.1.b4': 'Error alerts and a daily sync report',
@@ -654,7 +898,7 @@ const I18N = {
     'svc.2.time': '3–10 days',
     'svc.3.t': 'Custom B2B Integrations & Couriers',
     'svc.3.p': 'Couriers, CRM, databases and internal tools don’t talk to each other, so data moves between them by hand.',
-    'svc.3.b1': 'Automatic shipment creation and tracking (DExpress, AKS, PostExpress, DHL)',
+    'svc.3.b1': 'Automatic shipment creation and tracking via courier APIs (e.g. DExpress, AKS, PostExpress, DHL)',
     'svc.3.b2': 'API bridges between SQL/REST systems and your CRM',
     'svc.3.b3': 'n8n workflows for repetitive tasks',
     'svc.3.b4': 'Internal knowledge base (RAG) over your documentation',
@@ -675,17 +919,10 @@ const I18N = {
     'cs.2.a1': 'Invoices with line items, payments in and out per partner',
     'cs.2.a2': 'Laravel + PostgreSQL: per-partner balance, audit log, nightly consistency check',
     'cs.2.a3': 'PDF partner statement and invoice + mismatch alerts',
-    'cs.3.t': 'B2B Market Intelligence & Lead Pipeline',
-    'cs.3.p': 'Researching potential B2B clients by hand took hours per company, with no clear criteria for who was actually a good fit.',
-    'cs.3.s': 'An automated domain crawler and Python classifier that detects the tech stack, business type and operational bottlenecks of target companies.',
-    'cs.3.m': 'Qualified leads', 'cs.3.r': 'structured and ready for outreach, without manual research.',
-    'cs.3.a1': 'List of target domains',
-    'cs.3.a2': 'Crawler + tech-stack detection + business classification',
-    'cs.3.a3': 'Structured list of qualified leads (CSV / CRM)',
 
     'why.kicker': '// why me', 'why.title': 'No agency middlemen. No lock-in.',
-    'why.1.t': 'Direct Engineer Access', 'why.1.d': 'No account managers or agency overhead — you talk directly to the person building your system.',
-    'why.2.t': 'Commercial & E-Commerce DNA', 'why.2.d': 'Proven production background in complex Magento/e-commerce architectures, inventory logic, and B2B operations.',
+    'why.1.t': 'Work Directly With the Engineer Who Builds It', 'why.1.d': 'No account managers or agency overhead — you talk directly to the person building your system.',
+    'why.2.t': 'Commercial & E-Commerce DNA', 'why.2.d': 'Adobe Certified Magento developer with production experience in ERP/POS integrations, inventory logic and B2B operations.',
     'why.3.t': 'Rapid Pilot First', 'why.3.d': 'Test the automation on your real data with a small pilot before committing to a larger rollout.',
     'why.4.t': 'Full Code & Data Ownership', 'why.4.d': 'Runs on your own server or cloud account with zero vendor lock-in and no bloated recurring SaaS fees.',
 
@@ -716,6 +953,50 @@ const I18N = {
     'f.ok': 'Thank you! Your message was sent — I’ll get back to you soon.',
     'f.err': 'Sending failed. Please email marko@savicdev.com directly.',
     'f.note': 'Your details are used only to respond to your inquiry.',
+    'nav.calc': 'Calculator',
+    'nav.faq': 'FAQ',
+    'calc.kicker': '// savings calculator',
+    'calc.title': 'What does manual work cost you every month?',
+    'calc.sub': 'Enter your own numbers. The calculator has no built-in assumed results: everything is computed from your inputs only.',
+    'calc.task': 'Which task is done by hand?',
+    'calc.t1': 'Re-typing supplier invoices and price lists',
+    'calc.t2': 'Moving webshop orders into the ERP',
+    'calc.t3': 'Updating stock and prices in the webshop',
+    'calc.t4': 'Answering inquiries and preparing quotes',
+    'calc.items': 'Items per day (invoices, orders, inquiries)',
+    'calc.min': 'Minutes per item',
+    'calc.days': 'Working days per month',
+    'calc.rate': 'Hourly cost of an employee',
+    'calc.share': 'Share of the work that gets automated',
+    'calc.share.hint': 'The rest stays with a person for review, e.g. low-confidence items. The real share is known only after a pilot on your data.',
+    'calc.r.manual': 'Manual work today',
+    'calc.r.saved': 'Time freed up',
+    'calc.hmo': 'h / mo',
+    'calc.r.money': 'Value of the time freed up',
+    'calc.month': 'per month',
+    'calc.year': 'per year',
+    'calc.r.payback': 'Pilot payback (€250–400)',
+    'calc.pb': 'in about {range}',
+    'calc.pb.low': 'With these numbers a paid pilot probably doesn’t pay off. If the volume is growing, get in touch and we’ll check together.',
+    'calc.cta': 'Send this estimate with an inquiry',
+    'calc.note': 'An estimate based on your inputs, not a guaranteed saving. I give a concrete estimate after a free workflow audit.',
+    'calc.msg': 'Estimate from the website calculator.\nTask: {task}\nItems per day: {items}, minutes per item: {min}, working days per month: {days}\nManual work: {manual} h per month\nWith {share}% automated: about {saved} h per month, worth about {money}\n\nOur process: ',
+    'faq.kicker': '// FAQ',
+    'faq.title': 'Before you get in touch',
+    'faq.1.q': 'Do you work with a contract and an invoice?',
+    'faq.1.a': 'Yes. Every project comes with a contract that describes the scope clearly and a regular invoice paid to a business bank account. No cash, no grey zone.',
+    'faq.2.q': 'How does payment work, and what if the pilot fails?',
+    'faq.2.a': 'For a pilot (€250–400), 50% is paid upfront once the specification is agreed, and the other 50% only when you see a working result on your own data. If the pilot doesn’t solve the agreed task, the second half isn’t charged. Larger projects are paid in milestones agreed in advance.',
+    'faq.3.q': 'Do you have a ready-made module for my ERP or webshop?',
+    'faq.3.a': 'I don’t sell ready-made “plug-and-play” modules. I connect systems through what they already offer: APIs, webhooks or XML/CSV data exchange. That’s why every integration first goes through a pilot on your real data before it goes into daily use.',
+    'faq.4.q': 'Do we have to replace our ERP or webshop?',
+    'faq.4.a': 'No. The automation is added alongside the systems you already use. Your team keeps working in the same software, just without moving data between systems by hand.',
+    'faq.5.q': 'Where is our data, and who has access?',
+    'faq.5.a': 'The solution runs on your server or cloud account, and I get only the access the job needs. For AI document processing, a model that runs locally can be used so documents never leave your server. If a cloud AI service is used, we agree in advance which one and what data is sent to it.',
+    'faq.6.q': 'What happens if we stop working together?',
+    'faq.6.a': 'The code, the access and the documentation are yours. The solution runs on your infrastructure, and the documentation is written so another developer can take it over. Monthly maintenance is optional.',
+    'faq.7.q': 'How much time does it take from our team?',
+    'faq.7.a': 'For the workflow audit: a 15–30 minute call. For a pilot: a sample of real data (e.g. a few invoices or a price list export) and one person who knows the process and can check the result.',
     'ft.rights': 'All rights reserved.', 'ft.switch': 'Srpski'
   }
 };
@@ -738,6 +1019,9 @@ function setLang(next) {
   document.querySelectorAll('[data-i18n-label]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nLabel)); });
   document.title = t('meta.title');
   document.querySelector('meta[name="description"]').content = t('meta.desc');
+  const pageUrl = lang === 'en' ? 'https://savicdev.com/?lang=en' : 'https://savicdev.com/';
+  document.querySelector('link[rel="canonical"]').href = pageUrl;
+  document.querySelector('meta[property="og:url"]').content = pageUrl;
   document.querySelectorAll('[data-lang]').forEach(b => {
     const on = b.dataset.lang === lang;
     b.setAttribute('aria-pressed', on);
@@ -747,6 +1031,7 @@ function setLang(next) {
   const url = new URL(location.href);
   lang === 'en' ? url.searchParams.set('lang', 'en') : url.searchParams.delete('lang');
   history.replaceState(null, '', url);
+  if (window.calcReady) calcLang();   // calculator code is defined further down
 }
 
 const urlLang = new URLSearchParams(location.search).get('lang');
@@ -794,6 +1079,83 @@ form.addEventListener('submit', async e => {
   } finally {
     btn.disabled = false; btn.textContent = t('f.submit');
   }
+});
+
+// Savings calculator. Every number is computed from the visitor's inputs; nothing is assumed.
+const EUR_RSD = 117;            // rounded NBS middle rate, shown in the calculator note
+const PILOT = [250, 400];       // EUR, same as the pricing section
+const WEEKS_PER_MONTH = 4.33;
+const $c = id => document.getElementById(id);
+let calcCur = null;             // currency the rate field is currently in
+let rateEur = null;             // the rate in EUR at full precision, so SR→EN→SR gives back the typed value
+const num = (v, d = 0) => new Intl.NumberFormat(lang === 'sr' ? 'sr-RS' : 'en-US', { maximumFractionDigits: d }).format(v);
+const money = eur => lang === 'sr' ? `${num(eur * EUR_RSD)} RSD` : `€${num(eur)}`;
+const val = (id, min) => { const v = parseFloat($c(id).value); return Number.isFinite(v) && v >= min ? v : 0; };
+
+function srPlural(n, one, few, many) {
+  const a = n % 10, b = n % 100;
+  if (a === 1 && b !== 11) return one;
+  if (a >= 2 && a <= 4 && (b < 12 || b > 14)) return few;
+  return many;
+}
+function duration(lo, hi) {                 // lo/hi in weeks
+  let unit = 'w';
+  if (hi > 8) { lo /= WEEKS_PER_MONTH; hi /= WEEKS_PER_MONTH; unit = 'm'; }
+  lo = Math.max(1, Math.ceil(lo)); hi = Math.max(1, Math.ceil(hi));
+  const range = lo === hi ? `${lo}` : `${lo}–${hi}`;
+  if (lang === 'sr') {
+    const word = unit === 'w' ? srPlural(hi, 'nedelju', 'nedelje', 'nedelja') : srPlural(hi, 'mesec', 'meseca', 'meseci');
+    return `${range} ${word}`;
+  }
+  const word = unit === 'w' ? (hi === 1 ? 'week' : 'weeks') : (hi === 1 ? 'month' : 'months');
+  return `${range} ${word}`;
+}
+
+let calcSummary = '';
+function calc() {
+  const items = val('c-items', 0), min = val('c-min', 0), days = val('c-days', 0);
+  const share = parseInt($c('c-share').value, 10);
+  const manualH = items * min * days / 60;
+  const savedH = manualH * share / 100;
+  const eurMonth = savedH * rateEur;
+  $c('c-share-out').textContent = share + '%';
+  $c('r-manual').textContent = num(manualH);
+  $c('r-saved').textContent = num(savedH);
+  $c('r-money').textContent = money(eurMonth);
+  $c('r-year').textContent = (lang === 'sr' ? `≈ ${num(eurMonth)} € ${t('calc.month')} · ` : '') + `${money(eurMonth * 12)} ${t('calc.year')}`;
+  const weeks = PILOT.map(p => eurMonth > 0 ? p / (eurMonth / WEEKS_PER_MONTH) : Infinity);
+  const low = weeks[1] > 26;
+  $c('r-payback').textContent = low ? t('calc.pb.low') : t('calc.pb').replace('{range}', duration(weeks[0], weeks[1]));
+  $c('r-payback').className = low ? 'mt-1 text-sm leading-relaxed text-slate-300' : 'mt-1 text-lg font-semibold text-white';
+  const task = $c('c-task').selectedOptions[0]?.textContent || '';
+  calcSummary = t('calc.msg').replace('{task}', task.toLowerCase()).replace('{items}', num(items)).replace('{min}', num(min, 1))
+    .replace('{days}', num(days)).replace('{manual}', num(manualH)).replace('{share}', share)
+    .replace('{saved}', num(savedH))
+    .replace('{money}', money(eurMonth) + (lang === 'sr' ? ` (≈ ${num(eurMonth)} €)` : '') + ' ' + t('calc.month'));
+}
+// On a language switch the rate field changes currency (RSD for SR, EUR for EN), converted at EUR_RSD.
+function calcLang() {
+  const cur = lang === 'sr' ? 'RSD' : 'EUR';
+  const rateEl = $c('c-rate');
+  if (rateEur === null) rateEur = cur === 'RSD' ? 1000 / EUR_RSD : 12;   // starting example; visitors type their own
+  if (calcCur !== cur) rateEl.value = cur === 'RSD' ? Math.round(rateEur * EUR_RSD) : Math.round(rateEur * 10) / 10;
+  rateEl.step = cur === 'RSD' ? '50' : '0.5';
+  calcCur = cur;
+  $c('c-cur').textContent = cur === 'RSD' ? 'RSD / h' : '€ / h';
+  calc();
+}
+document.getElementById('calcForm').addEventListener('input', e => {
+  if (e.target.id === 'c-rate') { const r = val('c-rate', 0); rateEur = calcCur === 'RSD' ? r / EUR_RSD : r; }
+  calc();
+});
+document.getElementById('calcForm').addEventListener('submit', e => e.preventDefault());
+window.calcReady = true;
+calcLang();
+$c('calcSend').addEventListener('click', () => {
+  calc();
+  $c('f-msg').value = calcSummary;
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => { const m = $c('f-msg'); m.focus({ preventScroll: true }); m.setSelectionRange(m.value.length, m.value.length); }, 600);
 });
 
 // Case studies: Magacin preview tabs + lightbox, Legal RAG citations and n8n flow toggle.

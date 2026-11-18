@@ -8,6 +8,18 @@ Single-page B2B landing site for **savicdev.com** — Marko Savić, AI & Softwar
 
 Preview locally: open `index.html` in a browser, or run `npx serve .`.
 
+## Link previews and SEO
+
+- `og-image.png` (1200×630) is the preview card for Viber, WhatsApp, LinkedIn, Facebook, Slack and X. Its source is `tools/og-image.html`: change the text there, open it in a browser at 1200×630 and save a screenshot over `og-image.png`. Preview crawlers don't run JavaScript, so the `og:*` / `twitter:*` tags in `<head>` stay Serbian-first.
+- `icon-192.png`, `icon-512.png` and `apple-touch-icon.png` are PNG renders of `favicon.svg` (messengers and iOS ignore SVG icons).
+- `<head>` holds JSON-LD (`ProfessionalService`, `Person`, `WebSite`); the FAQ section holds a `FAQPage` block built from the Serbian answers. Keep it in sync when FAQ copy changes.
+- `robots.txt` and `sitemap.xml` sit in the root. Bump `<lastmod>` in the sitemap after larger content changes.
+- After deploying, re-scrape the preview at <https://www.linkedin.com/post-inspector/> and <https://developers.facebook.com/tools/debug/> (WhatsApp uses Facebook's cache).
+
+## Savings calculator
+
+The `#calc` section computes hours and money from the visitor's own inputs only (items per day × minutes × working days × share automated × hourly cost). Constants at the top of the calculator script: `EUR_RSD` (shown in the note), `PILOT` (keep in sync with the pricing section). "Send this estimate" pastes a summary into the contact form message.
+
 ## Contact form (Web3Forms)
 
 1. Go to <https://web3forms.com>, enter `marko@savicdev.com`, and copy the free access key from the email.
