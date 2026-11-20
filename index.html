@@ -427,6 +427,105 @@
           </article>
           <!-- PROJECT CARD END: cs.2 -->
 
+          <!-- PROJECT CARD START: cs.3 (sem-bidding-simulator: static report preview, synthetic data)
+               Static on purpose: the live Streamlit demo runs on demand, so nothing here links to it. -->
+          <article class="grid gap-8 rounded-2xl border border-white/10 bg-slate-950 p-5 sm:p-8 lg:grid-cols-5">
+            <div class="min-w-0 lg:col-span-2">
+              <span class="rounded-md bg-emerald-400/10 px-2 py-1 font-mono text-xs text-emerald-300">Python · SQL · Bayes</span>
+              <h3 class="mt-4 text-xl font-semibold text-white sm:text-2xl" data-i18n="cs.3.t"></h3>
+              <dl class="mt-5 grid gap-4 text-sm">
+              <div><dt class="font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.problem"></dt><dd class="mt-1 leading-relaxed text-slate-400" data-i18n="cs.3.p"></dd></div>
+              <div><dt class="font-mono text-xs uppercase tracking-wider text-slate-500" data-i18n="lbl.solution"></dt><dd class="mt-1 leading-relaxed text-slate-400" data-i18n="cs.3.s"></dd></div>
+              <div class="rounded-lg border border-emerald-400/20 bg-emerald-400/5 p-4"><dt class="font-mono text-xs uppercase tracking-wider text-emerald-300" data-i18n="lbl.impact"></dt><dd class="mt-1"><span class="block text-xl font-bold text-white" data-i18n="cs.3.m"></span><span class="text-slate-300" data-i18n="cs.3.r"></span></dd></div>
+            </dl>
+              <details class="mt-5 border-t border-white/5 pt-4">
+              <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-emerald-400 hover:text-emerald-300"><span data-i18n="lbl.arch"></span><svg class="chev transition" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+              <ol class="mt-4 grid gap-2 text-sm ">
+                <li class="rounded-lg border border-white/10 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.in"></span><span data-i18n="cs.3.a1"></span></li>
+                <li class="text-center text-emerald-400" aria-hidden="true">↓</li>
+                <li class="rounded-lg border border-emerald-400/30 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.proc"></span><span data-i18n="cs.3.a2"></span></li>
+                <li class="text-center text-emerald-400" aria-hidden="true">↓</li>
+                <li class="rounded-lg border border-white/10 bg-slate-900 p-3"><span class="block font-mono text-xs text-slate-500" data-i18n="lbl.out"></span><span data-i18n="cs.3.a3"></span></li>
+              </ol>
+            </details>
+              <p class="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm font-semibold"><!-- SM-REPO-LINK --><a href="#contact" class="text-emerald-400 hover:text-emerald-300" data-i18n="cs.3.demo"></a></p>
+            </div>
+            <figure class="min-w-0 lg:col-span-3">
+              <div class="overflow-hidden rounded-xl border border-white/10 bg-slate-900/60 shadow-2xl shadow-black/40" data-sm-app>
+                <div class="flex items-center gap-3 border-b border-white/10 bg-slate-800 px-3 py-2">
+                  <span class="flex gap-1.5" aria-hidden="true"><span class="h-2.5 w-2.5 rounded-full bg-rose-400/70"></span><span class="h-2.5 w-2.5 rounded-full bg-amber-300/70"></span><span class="h-2.5 w-2.5 rounded-full bg-emerald-400/70"></span></span>
+                  <span class="min-w-0 flex-1 truncate rounded-md bg-slate-900/80 px-3 py-1 font-mono text-[11px] text-slate-400">sem-bidding-simulator · report.html</span>
+                  <span class="shrink-0 rounded-full border border-amber-300/40 bg-amber-300/10 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-amber-200" data-i18n="sm.synth"></span>
+                </div>
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 px-4 py-2.5">
+                  <span class="font-mono text-xs text-slate-300" data-i18n="sm.run"></span>
+                  <div class="flex rounded-md border border-white/10 p-0.5 font-mono text-[10px]" role="tablist">
+                    <button type="button" role="tab" data-sm-tab="bid" aria-selected="true" class="lr-flow rounded px-2 py-1">Bidding</button>
+                    <button type="button" role="tab" data-sm-tab="ab" aria-selected="false" class="lr-flow rounded px-2 py-1" data-i18n="sm.tab.ab"></button>
+                    <button type="button" role="tab" data-sm-tab="waste" aria-selected="false" class="lr-flow rounded px-2 py-1">Wasted spend</button>
+                  </div>
+                </div>
+
+                <!-- Bidding: walk-forward simulation, mean of 5 seeds (outputs/bidding_summary.csv) -->
+                <div data-sm-panel="bid" class="p-4 sm:p-5">
+                  <p class="text-sm font-semibold text-white" data-i18n="sm.bid.h"></p>
+                  <p class="mt-1 text-xs text-slate-500" data-i18n="sm.bid.sub"></p>
+                  <div class="mt-4 grid grid-cols-[minmax(0,7.5rem)_minmax(0,1fr)_auto] items-center gap-x-3 gap-y-2.5 font-mono text-[11px] sm:grid-cols-[minmax(0,9.5rem)_minmax(0,1fr)_auto]">
+                    <span class="truncate text-slate-400" data-i18n="sm.s.static"></span><span class="h-3 rounded-sm bg-slate-600" style="width:86.9%"></span><span class="text-right text-slate-300" data-i18n="sm.v.static"></span>
+                    <span class="truncate text-slate-400" data-i18n="sm.s.rules"></span><span class="h-3 rounded-sm bg-rose-400/60" style="width:75.6%"></span><span class="text-right text-slate-300" data-i18n="sm.v.rules"></span>
+                    <span class="truncate text-slate-400">EV · raw CVR</span><span class="h-3 rounded-sm bg-emerald-400/40" style="width:98.4%"></span><span class="text-right text-slate-300" data-i18n="sm.v.raw"></span>
+                    <span class="truncate font-bold text-emerald-300">EV · shrinkage</span><span class="h-3 rounded-sm bg-emerald-400 shadow shadow-emerald-500/30" style="width:98.0%"></span><span class="text-right font-bold text-emerald-300" data-i18n="sm.v.shrink"></span>
+                    <span class="truncate text-slate-500" data-i18n="sm.s.oracle"></span><span class="h-3 rounded-sm border border-dashed border-slate-500" style="width:100%"></span><span class="text-right text-slate-500" data-i18n="sm.v.oracle"></span>
+                  </div>
+                  <div class="mt-5 grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-center">
+                    <div><span class="block font-mono text-base font-bold text-white" data-i18n="sm.k1"></span><span class="block text-[11px] text-slate-500" data-i18n="sm.k1l"></span></div>
+                    <div><span class="block font-mono text-base font-bold text-white" data-i18n="sm.k2"></span><span class="block text-[11px] text-slate-500" data-i18n="sm.k2l"></span></div>
+                    <div><span class="block font-mono text-base font-bold text-white" data-i18n="sm.k3"></span><span class="block text-[11px] text-slate-500" data-i18n="sm.k3l"></span></div>
+                  </div>
+                </div>
+
+                <!-- A/B test + bandits (outputs/summary.json: ab_test, bandits) -->
+                <div data-sm-panel="ab" class="hidden p-4 sm:p-5">
+                  <p class="text-sm font-semibold text-white" data-i18n="sm.ab.h"></p>
+                  <div class="mt-3 flex flex-wrap gap-2 font-mono text-[11px]">
+                    <span class="rounded bg-slate-800 px-2 py-1 text-slate-300" data-i18n="sm.ab.lift"></span>
+                    <span class="rounded bg-slate-800 px-2 py-1 text-slate-300">p &lt; 0.001</span>
+                    <span class="rounded border border-emerald-400/40 bg-emerald-400/10 px-2 py-1 font-bold text-emerald-300" data-i18n="sm.ab.prob"></span>
+                  </div>
+                  <p class="mt-5 text-sm font-semibold text-white" data-i18n="sm.bd.h"></p>
+                  <p class="mt-1 text-xs text-slate-500" data-i18n="sm.bd.sub"></p>
+                  <div class="mt-3 overflow-x-auto">
+                    <table class="w-full font-mono text-[11px]">
+                      <thead class="text-left text-slate-500"><tr><th class="py-1.5 pr-3 font-normal" data-i18n="sm.th.pol"></th><th class="py-1.5 pr-3 text-right font-normal" data-i18n="sm.th.rev"></th><th class="py-1.5 pr-3 text-right font-normal" data-i18n="sm.th.best"></th><th class="py-1.5 text-right font-normal" data-i18n="sm.th.reg"></th></tr></thead>
+                      <tbody class="divide-y divide-white/5 text-slate-300">
+                        <tr><td class="py-2 pr-3">Static split</td><td class="py-2 pr-3 text-right">±0%</td><td class="py-2 pr-3 text-right">33%</td><td class="py-2 text-right" data-i18n="sm.r.static"></td></tr>
+                        <tr><td class="py-2 pr-3">UCB1</td><td class="py-2 pr-3 text-right" data-i18n="sm.r.ucbl"></td><td class="py-2 pr-3 text-right">40%</td><td class="py-2 text-right" data-i18n="sm.r.ucb"></td></tr>
+                        <tr class="font-bold text-emerald-300"><td class="py-2 pr-3">Thompson</td><td class="py-2 pr-3 text-right" data-i18n="sm.r.tsl"></td><td class="py-2 pr-3 text-right">74%</td><td class="py-2 text-right" data-i18n="sm.r.ts"></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Wasted spend: sql/05_wasted_spend_search_terms.sql -->
+                <div data-sm-panel="waste" class="hidden p-4 sm:p-5">
+                  <div class="flex flex-wrap items-end gap-x-4 gap-y-1">
+                    <span class="font-mono text-3xl font-bold text-rose-300" data-i18n="sm.w.eur"></span>
+                    <span class="pb-1 text-sm text-slate-400" data-i18n="sm.w.sub"></span>
+                  </div>
+                  <p class="mt-1 text-xs text-slate-500" data-i18n="sm.w.rule"></p>
+                  <ul class="mt-4 space-y-2 font-mono text-[11px]">
+                    <li class="flex items-center gap-3 rounded-lg border border-white/10 bg-slate-950/60 px-3 py-2"><span class="min-w-0 flex-1 break-words text-slate-200">how to fix laptop for programming</span><span class="hidden rounded bg-rose-400/10 px-1.5 py-0.5 text-[10px] text-rose-300 sm:inline">ZERO_CONV</span><span class="shrink-0 text-slate-300" data-i18n="sm.w.t1"></span></li>
+                    <li class="flex items-center gap-3 rounded-lg border border-white/10 bg-slate-950/60 px-3 py-2"><span class="min-w-0 flex-1 break-words text-slate-200">dual sim phone driver download</span><span class="hidden rounded bg-rose-400/10 px-1.5 py-0.5 text-[10px] text-rose-300 sm:inline">ZERO_CONV</span><span class="shrink-0 text-slate-300" data-i18n="sm.w.t2"></span></li>
+                    <li class="flex items-center gap-3 rounded-lg border border-white/10 bg-slate-950/60 px-3 py-2"><span class="min-w-0 flex-1 break-words text-slate-200">how to fix compact phone</span><span class="hidden rounded bg-amber-300/10 px-1.5 py-0.5 text-[10px] text-amber-200 sm:inline">HIGH_CPA</span><span class="shrink-0 text-slate-300" data-i18n="sm.w.t3"></span></li>
+                  </ul>
+                  <p class="mt-3 text-xs text-slate-500" data-i18n="sm.w.foot"></p>
+                </div>
+              </div>
+              <figcaption class="mt-3 text-xs leading-relaxed text-slate-500" data-i18n="sm.cap"></figcaption>
+            </figure>
+          </article>
+          <!-- PROJECT CARD END: cs.3 -->
+
 
         </div>
       </div>
@@ -788,6 +887,29 @@ const I18N = {
     'cs.2.a1': 'Fakture sa stavkama, uplate i isplate po partneru',
     'cs.2.a2': 'Laravel + PostgreSQL: saldo po partneru, audit log, noćna kontrola konzistentnosti',
     'cs.2.a3': 'PDF kartica partnera i faktura + upozorenje na neslaganja',
+    'cs.3.t': 'Simulator Google Ads bidovanja i A/B testova',
+    'cs.3.p': 'Webshopovi plaćaju Google Ads, a bidove menjaju po osećaju ili grubim pravilima („nema konverzija, spusti 30%“). Deo budžeta odlazi na pretrage koje nikad ne kupuju, a A/B testovi se gase pre nego što imaju dovoljno podataka.',
+    'cs.3.s': 'Laboratorija u Python-u i SQL-u: model aukcije sa poznatom „istinom“, 7 analitičkih SQL upita, frekventistički i Bayesovski A/B testovi, multi-armed bandits i bidovanje po očekivanoj vrednosti klika sa empirijskim Bayes-om, testirano u walk-forward simulaciji.',
+    'cs.3.m': 'ROAS 10,04 umesto 7,74',
+    'cs.3.r': 'u odnosu na klasična automatska pravila, prosek 5 simulacija. Isti alat je pronašao 23,8% budžeta bačenog na nebitne pretrage. Sve brojke su iz sintetičkih podataka, ne iz klijentskog naloga.',
+    'cs.3.a1': 'Sintetički Google Ads nalog: 406.080 redova po satu, 47 ključnih reči, 179 search terma (DuckDB + SQLite)',
+    'cs.3.a2': '7 SQL upita (CTE, window funkcije) + Python: z-test, Beta-Binomial, Thompson / UCB1, EV bidovanje sa shrinkage-om',
+    'cs.3.a3': 'Streamlit dashboard, offline HTML izveštaj i lista negativnih ključnih reči; 56 pytest testova',
+    'cs.3.demo': 'Interaktivni live demo na pozivu / na zahtev →',
+    'sm.synth': 'Sintetički podaci', 'sm.run': 'primer runa · seed 42 · 120 dana', 'sm.tab.ab': 'A/B · bandits',
+    'sm.bid.h': 'ROAS po strategiji bidovanja', 'sm.bid.sub': 'Walk-forward simulacija, prosek 5 seed-ova. Oracle zna pravu vrednost klika i služi samo kao gornja granica.',
+    'sm.s.static': 'Statični bidovi', 'sm.s.rules': 'Pravila (rule-based)', 'sm.s.oracle': 'Oracle (granica)',
+    'sm.v.static': '8,91', 'sm.v.rules': '7,74', 'sm.v.raw': '10,08', 'sm.v.shrink': '10,04', 'sm.v.oracle': '10,24',
+    'sm.k1': '+20%', 'sm.k1l': 'profit naspram pravila', 'sm.k2': '−25%', 'sm.k2l': 'CPA (19,11 € naspram 25,50 €)', 'sm.k3': '98%', 'sm.k3l': 'profita koji ostvaruje oracle',
+    'sm.ab.h': 'A/B test CTR-a oglasa (40.000 prikaza po varijanti)', 'sm.ab.lift': 'B: +16,1% CTR', 'sm.ab.prob': 'P(B > A) > 99,99%',
+    'sm.bd.h': 'Multi-armed bandits naspram fiksne podele', 'sm.bd.sub': '3 oglasa, 20.000 prikaza, 200 ponavljanja',
+    'sm.th.pol': 'Politika', 'sm.th.rev': 'Prihod', 'sm.th.best': 'Najbolji oglas', 'sm.th.reg': 'Izgubljene konv.',
+    'sm.r.static': '106,7', 'sm.r.ucbl': '+1,7%', 'sm.r.ucb': '94,5', 'sm.r.tsl': '+10,4%', 'sm.r.ts': '38,6',
+    'sm.w.eur': '18.082 €', 'sm.w.sub': '23,8% potrošnje · 53 search terma',
+    'sm.w.rule': 'Pravilo: bar 25 € potrošnje i 0 konverzija, ili CPA veći od 3× CPA kampanje.',
+    'sm.w.t1': '2.073 € · 0 konv.', 'sm.w.t2': '1.260 € · 0 konv.', 'sm.w.t3': '1.079 € · 1 konv.',
+    'sm.w.foot': 'Ovi termini idu pravo u listu negativnih ključnih reči.',
+    'sm.cap': 'Statički pregled izveštaja iz primera runa. Svi podaci su sintetički, iz simuliranog sveta sa poznatom istinom, pa svaka procena može da se uporedi sa stvarnom vrednošću. Nisu rezultati klijenta. Interaktivni Streamlit dashboard pokazujem uživo na pozivu.',
 
     'why.kicker': '// zašto ja', 'why.title': 'Bez agencijskih posrednika. Bez zaključavanja.',
     'why.1.t': 'Direktno sa inženjerom koji projektuje i piše sistem', 'why.1.d': 'Bez account menadžera i agencijskih troškova — razgovarate direktno sa osobom koja gradi vaš sistem.',
@@ -920,6 +1042,29 @@ const I18N = {
     'cs.2.a1': 'Invoices with line items, payments in and out per partner',
     'cs.2.a2': 'Laravel + PostgreSQL: per-partner balance, audit log, nightly consistency check',
     'cs.2.a3': 'PDF partner statement and invoice + mismatch alerts',
+    'cs.3.t': 'Google Ads Bidding & A/B Testing Simulator',
+    'cs.3.p': 'Online stores pay for Google Ads but change bids by gut feeling or blunt rules (“no conversions, cut 30%”). Part of the budget goes to searches that never buy, and A/B tests get stopped before they have enough data.',
+    'cs.3.s': 'A Python and SQL lab: an auction model with known ground truth, 7 analytical SQL queries, frequentist and Bayesian A/B tests, multi-armed bandits, and expected-value bidding with empirical Bayes, tested in a walk-forward simulation.',
+    'cs.3.m': 'ROAS 10.04 vs 7.74',
+    'cs.3.r': 'against classic automated rules, averaged over 5 simulations. The same tool flagged 23.8% of spend wasted on irrelevant searches. All numbers come from synthetic data, not a client account.',
+    'cs.3.a1': 'Synthetic Google Ads account: 406,080 hourly rows, 47 keywords, 179 search terms (DuckDB + SQLite)',
+    'cs.3.a2': '7 SQL queries (CTEs, window functions) + Python: z-test, Beta-Binomial, Thompson / UCB1, EV bidding with shrinkage',
+    'cs.3.a3': 'Streamlit dashboard, offline HTML report and a negative-keyword list; 56 pytest tests',
+    'cs.3.demo': 'Interactive live demo available on a call / upon request →',
+    'sm.synth': 'Synthetic data', 'sm.run': 'sample run · seed 42 · 120 days', 'sm.tab.ab': 'A/B · bandits',
+    'sm.bid.h': 'ROAS by bidding strategy', 'sm.bid.sub': 'Walk-forward simulation, mean of 5 seeds. The oracle knows the true value per click and is only an upper bound.',
+    'sm.s.static': 'Static bids', 'sm.s.rules': 'Rule-based', 'sm.s.oracle': 'Oracle (bound)',
+    'sm.v.static': '8.91', 'sm.v.rules': '7.74', 'sm.v.raw': '10.08', 'sm.v.shrink': '10.04', 'sm.v.oracle': '10.24',
+    'sm.k1': '+20%', 'sm.k1l': 'profit vs rules', 'sm.k2': '−25%', 'sm.k2l': 'CPA (€19.11 vs €25.50)', 'sm.k3': '98%', 'sm.k3l': 'of the oracle’s profit',
+    'sm.ab.h': 'Ad CTR A/B test (40,000 impressions per variant)', 'sm.ab.lift': 'B: +16.1% CTR', 'sm.ab.prob': 'P(B > A) > 99.99%',
+    'sm.bd.h': 'Multi-armed bandits vs a fixed split', 'sm.bd.sub': '3 ads, 20,000 impressions, 200 replications',
+    'sm.th.pol': 'Policy', 'sm.th.rev': 'Revenue', 'sm.th.best': 'Best ad', 'sm.th.reg': 'Lost conv.',
+    'sm.r.static': '106.7', 'sm.r.ucbl': '+1.7%', 'sm.r.ucb': '94.5', 'sm.r.tsl': '+10.4%', 'sm.r.ts': '38.6',
+    'sm.w.eur': '€18,082', 'sm.w.sub': '23.8% of spend · 53 search terms',
+    'sm.w.rule': 'Rule: at least €25 spent and 0 conversions, or CPA above 3× the campaign CPA.',
+    'sm.w.t1': '€2,073 · 0 conv.', 'sm.w.t2': '€1,260 · 0 conv.', 'sm.w.t3': '€1,079 · 1 conv.',
+    'sm.w.foot': 'These terms go straight into the negative-keyword list.',
+    'sm.cap': 'A static view of the report from the sample run. All data are synthetic, from a simulated world with known ground truth, so every estimate can be checked against the real value. These are not client results. I show the interactive Streamlit dashboard live on a call.',
 
     'why.kicker': '// why me', 'why.title': 'No agency middlemen. No lock-in.',
     'why.1.t': 'Work Directly With the Engineer Who Builds It', 'why.1.d': 'No account managers or agency overhead — you talk directly to the person building your system.',
@@ -1159,7 +1304,7 @@ $c('calcSend').addEventListener('click', () => {
   setTimeout(() => { const m = $c('f-msg'); m.focus({ preventScroll: true }); m.setSelectionRange(m.value.length, m.value.length); }, 600);
 });
 
-// Case studies: Magacin preview tabs + lightbox, Legal RAG citations and n8n flow toggle.
+// Case studies: Magacin preview tabs + lightbox, Legal RAG citations, n8n flow toggle and SEM report tabs.
 document.addEventListener('click', e => {
   const tab = e.target.closest('[data-mg-tab]');
   if (tab) {
@@ -1191,6 +1336,11 @@ document.querySelectorAll('[data-cite]').forEach(b => {
   b.addEventListener('blur', () => hot(false));
   b.addEventListener('click', () => document.querySelector(`[data-src="${b.dataset.cite}"]`).scrollIntoView({ block: 'nearest', behavior: 'smooth' }));
 });
+document.querySelectorAll('[data-sm-tab]').forEach(b => b.addEventListener('click', () => {
+  const app = b.closest('[data-sm-app]');
+  app.querySelectorAll('[data-sm-tab]').forEach(x => x.setAttribute('aria-selected', x === b));
+  app.querySelectorAll('[data-sm-panel]').forEach(p => p.classList.toggle('hidden', p.dataset.smPanel !== b.dataset.smTab));
+}));
 document.querySelectorAll('[data-flow]').forEach(b => b.addEventListener('click', () => {
   document.querySelectorAll('[data-flow]').forEach(x => x.setAttribute('aria-selected', x === b));
   document.querySelectorAll('[data-flow-panel]').forEach(p => p.classList.toggle('hidden', p.dataset.flowPanel !== b.dataset.flow));
